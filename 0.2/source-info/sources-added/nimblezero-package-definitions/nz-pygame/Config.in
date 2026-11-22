@@ -1,0 +1,14 @@
+config BR2_PACKAGE_NZ_PYGAME
+	bool "nz-pygame (pygame 2.6.1)"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_SDL2_IMAGE
+	select BR2_PACKAGE_SDL2_MIXER
+	select BR2_PACKAGE_SDL2_TTF
+	select BR2_PACKAGE_FREETYPE
+	select BR2_PACKAGE_LIBPNG
+	select BR2_PACKAGE_JPEG
+	help
+	  pygame (the version of Debian 13), built against SDL2.
+
+	  https://www.pygame.org/

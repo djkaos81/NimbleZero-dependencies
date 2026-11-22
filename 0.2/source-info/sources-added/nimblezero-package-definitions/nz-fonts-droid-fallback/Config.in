@@ -1,0 +1,4 @@
+config BR2_PACKAGE_NZ_FONTS_DROID_FALLBACK
+	bool "nz-fonts-droid-fallback (Droid Sans Fallback)"
+	help
+	  Droid Sans Fallback at the paths of Debian's fonts-droid-fallback.

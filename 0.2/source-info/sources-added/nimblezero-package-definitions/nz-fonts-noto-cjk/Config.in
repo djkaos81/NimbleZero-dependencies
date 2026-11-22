@@ -1,0 +1,8 @@
+config BR2_PACKAGE_NZ_FONTS_NOTO_CJK
+	bool "nz-fonts-noto-cjk (Noto Sans CJK: regular, medium, bold)"
+	help
+	  Noto Sans CJK as the collection files that programs built for
+	  Debian open by path (/usr/share/fonts/opentype/noto/). Regular
+	  and Bold are byte-identical to Debian 13's fonts-noto-cjk;
+	  Medium is in Debian's fonts-noto-cjk-extra. Serif and the other
+	  weights are not shipped (owner decision 2026-11-22).

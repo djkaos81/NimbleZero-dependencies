@@ -1,0 +1,31 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-2.0-only
+# PipeWire for NimbleZero: pipewire, wireplumber and pipewire-pulse run as user zero
+# (the user of the launcher and of every app).  There is no login session, so the
+# runtime directory is made here.  Logs: /tmp/nz-pipewire.log
+U=zero
+RT=/run/user/$(id -u $U)
+LOG=/tmp/nz-pipewire.log
+run() { su -s /bin/sh $U -c "XDG_RUNTIME_DIR=$RT HOME=/home/$U exec $* >> $LOG 2>&1 &"; }
+case "$1" in
+start)
+	printf 'Starting pipewire: '
+	mkdir -p $RT /var/run/pulse && chown $U:$U $RT /var/run/pulse && chmod 700 $RT && chmod 755 /var/run/pulse
+	: > $LOG; chown $U $LOG
+	# No RTKit here: allow real-time priority and a raised nice level directly (PipeWire's
+	# own values: priority 88, nice -11).  The limits are inherited by the services.
+	ulimit -r 88 2>/dev/null; ulimit -e 31 2>/dev/null
+	run pipewire
+	i=0; while [ ! -S $RT/pipewire-0 ] && [ $i -lt 50 ]; do sleep 0.1; i=$((i+1)); done
+	run wireplumber -p nz
+	run pipewire-pulse
+	[ -S $RT/pipewire-0 ] && echo OK || echo FAIL
+	;;
+stop)
+	printf 'Stopping pipewire: '
+	killall pipewire-pulse wireplumber pipewire 2>/dev/null
+	echo OK
+	;;
+restart) "$0" stop; sleep 1; "$0" start ;;
+*) echo "usage: $0 {start|stop|restart}"; exit 1 ;;
+esac

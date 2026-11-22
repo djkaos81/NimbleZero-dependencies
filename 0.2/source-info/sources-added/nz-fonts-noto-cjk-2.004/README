@@ -1,0 +1,5 @@
+The three font files in nz-fonts-noto-cjk (NotoSansCJK-Regular.ttc, -Medium.ttc, -Bold.ttc)
+are the unmodified files of https://github.com/notofonts/noto-cjk, tag Sans2.004,
+directory Sans/OTC. Their sources are in that repository. Licence: SIL Open Font
+License 1.1 (LICENSE). SHA-256 of the files: see nz-fonts-noto-cjk.hash in
+../nimblezero-package-definitions/nz-fonts-noto-cjk/.

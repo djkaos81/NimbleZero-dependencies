@@ -1,0 +1,7 @@
+config BR2_PACKAGE_NZ_PIPEWIRE_CONF
+	bool "nz-pipewire-conf (start-up and settings for PipeWire on NimbleZero)"
+	depends on BR2_PACKAGE_PIPEWIRE && BR2_PACKAGE_WIREPLUMBER
+	help
+	  Start script and settings that run PipeWire, WirePlumber and the
+	  PulseAudio-compatible service as user zero without a login
+	  session. Part of the installable package nz-pipewire.
