@@ -7,7 +7,8 @@ belongs to one version of the system; the Store reads the set its image was buil
 | Directory | For |
 |---|---|
 | `0.2.0~dev1/` | first development image (ffmpeg 6.1) |
-| `0.2.0~dev2/` | development image 2: ffmpeg 7.1 with the library names of Debian 13 |
+| `0.2.0~dev2/` | development images 2-4: ffmpeg 7.1 with the library names of Debian 13 |
+| `0.2.0~dev3/` | development image 5: as dev2, PipeWire settings for the one system volume |
 
 How a set was built, licences and source code: `<set>/source-info/`.
 
