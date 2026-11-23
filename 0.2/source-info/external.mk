@@ -33,3 +33,10 @@ PYTHON_PILLOW_BUILD_OPTS := $(filter-out -Cxcb=enable,$(PYTHON_PILLOW_BUILD_OPTS
 FFMPEG_CONF_OPTS += --disable-sdl2 --disable-libv4l2
 # PipeWire without the ffmpeg plugin
 PIPEWIRE_CONF_OPTS += -Dffmpeg=disabled -Dpw-cat-ffmpeg=disabled
+# Libraries added for apps (phase 3) must not be picked up by the big packages: ffmpeg
+# stays without libopenmpt, PipeWire without libusb (used for Bluetooth quirks only).
+FFMPEG_CONF_OPTS += --disable-libopenmpt
+PIPEWIRE_CONF_OPTS += -Dlibusb=disabled
+# mpg123 plays through ALSA (and so through the sound service); no SDL output module
+MPG123_AUDIO = alsa
+MPG123_CONF_OPTS += --with-default-audio=alsa

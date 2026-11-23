@@ -1,0 +1,2 @@
+0001-emitterutils-Explicitly-include-cstdint.patch
+0002-Specify-CMake-policy-range-to-avoid-deprecation-warning.patch

@@ -21,6 +21,12 @@ contents changed, and devices download only what changed.
     (each archive includes the Rust crates it was built with), cffi 2.0.0,
     pycparser 2.23, Droid Sans Fallback (Debian's fonts-android 8.1.0r7 archive),
     Noto Sans CJK 2.004 (unmodified upstream font files; see the README there).
+  - added 2026-11-23 (compatibility phase 3): Python 3.13.16 (Debian 13 has Python 3.13;
+    `buildroot-patches/0003` replaces Buildroot's 3.14), alsa-plugins, libusb, libuv,
+    yaml-cpp, mpg123, libopenmpt, cJSON, c-ares, and the Python modules serial, spidev,
+    smbus2, pyudev, netifaces, aiohttp with what it needs, websockets, websocket-client,
+    zeroconf, mutagen, pip, setuptools. iproute2 is listed because it is in the base
+    system from this build on.
 - How NimbleZero builds the packages that are not in Buildroot (fonts, pygame, PipeWire
   start-up): `sources-added/nimblezero-package-definitions/`.
 - NimbleZero's own files in these packages (start script and settings for PipeWire,

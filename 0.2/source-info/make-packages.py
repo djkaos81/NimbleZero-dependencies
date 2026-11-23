@@ -217,6 +217,12 @@ def tar_xz(add):
 def reset(ti):
     ti.uid = ti.gid = 0; ti.uname = ti.gname = "root"; return ti
 
+# A package can only bring files into the directories the package layer covers.
+LAYER = ("usr/", "etc/", "opt/", "lib/", "bin/", "sbin/", "var/")   # var: writable on its own
+for deb, fl in deb_files.items():
+    bad = [f for f in fl if not f.startswith(LAYER)]
+    if bad: die(f"{deb}: files outside the package layer's directories (e.g. /{bad[0]}); it could not be installed")
+
 # ---- versions: what was published before -----------------------------------------------
 prev = {}                                    # deb -> (version, digest, repo, filename, stanza)
 if PREV:
