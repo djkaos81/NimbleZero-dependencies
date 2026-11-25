@@ -260,19 +260,20 @@ Size: 67824
 SHA256: 2882d0358caa809f8c5563db80adf971c9234dde944eaa5f146fc198beca10a8
 
 Package: nz-lib-libogg
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 33
 Section: libs
 Priority: optional
+Replaces: nz-ffmpeg (<< 0.2.2)
 NZ-Title: nz-lib-libogg
 NZ-Contents: libogg 1.3.6
-NZ-Digest: 53ed322a70f71f9cec6fae1edd93f275407bfc83d28f109281764ad83c442b16
+NZ-Digest: 10352812fbc0728e5cab3ff7f967d80e1c979e1caa36d62f843e55d06ac2639b
 Description: Library package built from libogg
-Filename: nz-lib-libogg_0.2.1_arm64.deb
-Size: 17648
-SHA256: 4131bc1c4fd25c4705859863a235f4bb1769c65fc3591f25c91812a0bbc87b89
+Filename: nz-lib-libogg_0.2.2_arm64.deb
+Size: 17644
+SHA256: a92b2af3067e2f74748f9b7da74494f9f9345873eb9ff0ae7ac3bc9d263bf3e7
 
 Package: nz-lib-libopenmpt
 Version: 0.2.1
@@ -372,21 +373,22 @@ Size: 74040
 SHA256: 44384b29da532726efd45e526d1d73fa5e4044b8e8f1658174e05e9605e30d7b
 
 Package: nz-lib-libvorbis
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 841
 Section: libs
 Priority: optional
-Depends: nz-lib-libogg (>= 0.2.1)
+Depends: nz-lib-libogg (>= 0.2.2)
 Provides: libvorbis0a (= 1.3.7)
+Replaces: nz-ffmpeg (<< 0.2.2)
 NZ-Title: nz-lib-libvorbis
 NZ-Contents: libvorbis 1.3.7
-NZ-Digest: d71adbcc28a769df068b0ac35438b39fd8036df589100e079a4bf6221c2b0774
+NZ-Digest: 49e3ceaeb8443be4da3aa91650c8eed9d6aa8601060d4ec97d624abf7d277eb5
 Description: Library package built from libvorbis
-Filename: nz-lib-libvorbis_0.2.1_arm64.deb
-Size: 154040
-SHA256: ab9c7437d252af5109ac4a831dc30a462a12827f24a050eb8ff0e76be25a93a9
+Filename: nz-lib-libvorbis_0.2.2_arm64.deb
+Size: 153376
+SHA256: 74963089dce270bf0555c18a1c4eee3b9c3193f93f397b02783500cc16836c71
 
 Package: nz-lib-libxcb
 Version: 0.2.1
