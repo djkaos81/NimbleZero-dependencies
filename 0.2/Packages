@@ -500,21 +500,22 @@ Size: 100136
 SHA256: 02d88c4e355335a6d2dfc219213ec9e623610dea12ac55df7ff95ef83a9eff15
 
 Package: nz-libpulse
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 1025
 Section: libs
 Priority: optional
-Depends: nz-lib-dbus (>= 0.2.1), nz-lib-libglib2 (>= 0.2.1), nz-lib-libsndfile (>= 0.2.1)
+Depends: nz-lib-dbus (>= 0.2.1), nz-lib-libglib2 (>= 0.2.1), nz-lib-libsndfile (>= 0.2.2)
 Provides: libpulse0 (= 17.0), pulseaudio-utils (= 17.0)
+NZ-Wants: nz-pipewire | nz-pulseaudio
 NZ-Title: PulseAudio client library
 NZ-Contents: 
-NZ-Digest: ea7f062a435996089031876219dbd82294d9c376e059e89977817223c5663dbf
+NZ-Digest: 36b3538404447efdab2020cb9058d9e98babbf0cbcbd92a842b1b72797858fcc
 Description: Library and tools that programs use to reach the sound service (PulseAudio or PipeWire)
-Filename: nz-libpulse_0.2.1_arm64.deb
-Size: 247964
-SHA256: 6b36309fff3edd18975f2095d215d6d3a15468a74be1ddbbd28bb1fe53751b7d
+Filename: nz-libpulse_0.2.2_arm64.deb
+Size: 248612
+SHA256: 971d4a940dbd8dfe051bad6c7ccb2f26291e7883dc0b451c7dbfd8a5e1ca8088
 
 Package: nz-m5-runtime
 Version: 0.2.1
