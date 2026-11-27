@@ -27,6 +27,14 @@ contents changed, and devices download only what changed.
     smbus2, pyudev, netifaces, aiohttp with what it needs, websockets, websocket-client,
     zeroconf, mutagen, pip, setuptools. iproute2 is listed because it is in the base
     system from this build on.
+  - added 2026-11-27 (Media Player 0.5: chip music), **built outside the Buildroot build**:
+    game-music-emu (libgme) 0.6.5 and libsidplayfp 2.16.1, packages `nz-lib-libgme` and
+    `nz-lib-libsidplayfp`. They were compiled with the NimbleZero SDK's compiler by
+    `sources-added/nimblezero-music-libs/build-music-libs.sh`, which also writes the
+    packages (`nz-pack.py`: the control fields and NZ-Digest of `make-packages.py`); the
+    build is reproducible (same digests). `make-packages.py` does not know these two:
+    when it writes this set again, their entries in `Packages` and their `.deb` files
+    must be carried over (or the libraries added to the Buildroot build).
 - How NimbleZero builds the packages that are not in Buildroot (fonts, pygame, PipeWire
   start-up): `sources-added/nimblezero-package-definitions/`.
 - NimbleZero's own files in these packages (start script and settings for PipeWire,

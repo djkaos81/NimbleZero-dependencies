@@ -721,3 +721,35 @@ Description: SDL2 with the ttf, image and mixer libraries (sound and input only,
 Filename: nz-sdl2_0.2.1_arm64.deb
 Size: 525108
 SHA256: a23b3d4f9f4f832b90cf1fae9c408c4400cff51fd20d01e66693cb31b6dc49bf
+
+Package: nz-lib-libgme
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 288
+Section: libs
+Priority: optional
+Provides: libgme0 (= 0.6.5)
+NZ-Title: libgme
+NZ-Contents: game-music-emu 0.6.5
+NZ-Digest: fa6d8bd804463ac22beabdaa3c29f41b141ab6c1e7c46d1b3d50aa7809f7df23
+Description: Video game music library (libgme): NES, SNES, Genesis/VGM, Game Boy, PC Engine, MSX, ZX Spectrum, Atari
+Filename: nz-lib-libgme_0.2.1_arm64.deb
+Size: 119052
+SHA256: eb69dbac3a1c22abb5b537c0509429e38ed1c5153ad79a30fd2f92f7a24b4798
+
+Package: nz-lib-libsidplayfp
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 435
+Section: libs
+Priority: optional
+Provides: libsidplayfp6 (= 2.16.1)
+NZ-Title: libsidplayfp
+NZ-Contents: libsidplayfp 2.16.1
+NZ-Digest: e96f4ae3c18b8fa6684b1e9f3ad668b84a229f2836bbb95e691edbbe73a31ad0
+Description: Commodore 64 SID music library (libsidplayfp)
+Filename: nz-lib-libsidplayfp_0.2.1_arm64.deb
+Size: 108404
+SHA256: fe4727dd89e8f81f1cbabed582c120d009ad7f4f57bbbd296b7ddad6302bc72d
