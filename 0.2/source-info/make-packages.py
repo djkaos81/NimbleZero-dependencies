@@ -26,9 +26,18 @@ Versions: every package has its own.  SERIES is the package set's name (the dire
 devices read, e.g. 0.2); a package's version is SERIES.N.  With --previous DIR (the set
 as published: DIR/deps and DIR/apps with their Packages files and .deb files) a package
 whose files and control data are unchanged keeps its version and its published file;
+a package of the previous set that this build does not make at all (an app from
+NimbleZero-apps, nz-store, a library built elsewhere) is carried over as it is
+(carried.txt lists them);
 a changed or new one gets the next N.  Devices then download only what changed.
 
-usage: make-packages.py O SHOW_INFO.json GROUPS.conf PROVIDED.map SERIES OUTDIR [--previous DIR] [--check-only]
+Moved files: a file that an earlier published package had and that is now in another
+package can only be installed over it if the new package says so (Replaces); dpkg
+refuses otherwise ("trying to overwrite ..., which is also in package ...").  With
+--history DIR (repeatable; a directory with .deb files of an earlier set) and the
+--previous set, every such move is found and declared.
+
+usage: make-packages.py O SHOW_INFO.json GROUPS.conf PROVIDED.map SERIES OUTDIR [--previous DIR] [--history DIR]... [--check-only]
 """
 import sys, os, json, re, io, tarfile, hashlib, lzma, stat, struct, time, collections, fnmatch
 
@@ -38,6 +47,7 @@ if len(sys.argv) < 7: die(__doc__)
 O, INFO, GROUPS, PROVIDED, OSVER, OUT = sys.argv[1:7]
 CHECK_ONLY = "--check-only" in sys.argv
 PREV = sys.argv[sys.argv.index("--previous") + 1] if "--previous" in sys.argv else None
+HISTORY = [sys.argv[i + 1] for i, a in enumerate(sys.argv) if a == "--history"]
 T = os.path.join(O, "target")
 info = json.load(open(INFO))
 target_pkgs = {k for k, v in info.items() if v.get("type") == "target"}
@@ -45,6 +55,10 @@ target_pkgs = {k for k, v in info.items() if v.get("type") == "target"}
 # ---- groups.conf ---------------------------------------------------------------------
 # [base]            roots = a b c
 # [nz-name]         packages = a b     depends = nz-x     section = dependency|runtime
+#                   wants = nz-a | nz-b     installed along by the Store (the first of
+#                       them, unless one is there already) but not required by dpkg
+#                       (field NZ-Wants): for two packages that need each other, where
+#                       a Depends in both directions could not be installed one by one
 #                   title = ...        description = ...    repo = deps|apps (default deps)
 #                   files = pkg:glob ...   (take only matching files of a package that
 #                                           otherwise belongs elsewhere)
@@ -232,6 +246,33 @@ if PREV:
         for st in open(f).read().split("\n\n"):
             d = dict(l.split(": ", 1) for l in st.splitlines() if ": " in l and not l.startswith(" "))
             if "Package" in d: prev[d["Package"]] = (d.get("Version", ""), d.get("NZ-Digest", ""), repo, d.get("Filename", ""), st.strip("\n") + "\n")
+# ---- files that moved from one package to another ---------------------------------------
+def deb_contents(path):
+    """(package name, set of files and links) of a .deb file; dpkg-deb reads every
+    compression in use (ours are xz, the apps' are zstd)"""
+    import subprocess
+    try:
+        name = subprocess.run(["dpkg-deb", "-f", path, "Package"], check=True, capture_output=True, text=True).stdout.strip()
+        raw = subprocess.run(["dpkg-deb", "--fsys-tarfile", path], check=True, capture_output=True).stdout
+    except (OSError, subprocess.CalledProcessError) as e: die(f"cannot read {path}: {e}")
+    with tarfile.open(fileobj=io.BytesIO(raw)) as t:
+        return name, {m.name.lstrip("./") for m in t.getmembers() if not m.isdir()}
+old_owner = collections.defaultdict(set)     # file -> packages that had it in an earlier publication
+olddirs = list(HISTORY) + ([os.path.join(PREV, r) for r in ("deps", "apps")] if PREV else [])
+for d in olddirs:
+    if not os.path.isdir(d): die(f"no such directory: {d}")
+    for fn in sorted(os.listdir(d)):
+        if fn.endswith(".deb"):
+            n, fl = deb_contents(os.path.join(d, fn))
+            for f in fl: old_owner[f].add(n)
+replaces = collections.defaultdict(set)      # deb -> packages it takes files over from
+moved = {}
+for deb, fl in deb_files.items():
+    for f in fl:
+        for q in old_owner.get(f, ()):
+            if q != deb: replaces[deb].add(q); moved.setdefault((deb, q), f)
+for (deb, q), f in sorted(moved.items()): print(f"moved: {deb} takes over from {q} (e.g. /{f})")
+
 def digest(deb, meta):
     """Identity of a package: its files (path, mode, contents) and its control data without versions."""
     h = hashlib.sha256(meta.encode())
@@ -250,7 +291,7 @@ for deb, r in rep["packages"].items():
     desc = c.get("description") or ("Library package built from " + ", ".join(brp))
     contents = ", ".join(f"{p} {info[p].get('version','')}".strip() for p in brp)
     meta = "\n".join([deb, "depends " + " ".join(r["depends"]), "provides " + " ".join(r["provides"]),
-                      "conflicts " + c.get("conflicts", ""), "section " + ("libs" if r["library"] else c.get("section", "dependency")),
+                      "conflicts " + c.get("conflicts", ""), *(["wants " + " ".join(c["wants"].split())] if c.get("wants") else []), *(["replaces " + " ".join(sorted(replaces[deb]))] if replaces[deb] else []), "section " + ("libs" if r["library"] else c.get("section", "dependency")),
                       "title " + c.get("title", deb), "contents " + contents, "description " + desc])
     dg = digest(deb, meta)
     reuse = deb in prev and prev[deb][1] == dg and os.path.exists(os.path.join(PREV, prev[deb][2], prev[deb][3]))
@@ -290,6 +331,9 @@ for deb, r in rep["packages"].items():
     if r["depends"]: ctl.append("Depends: " + ", ".join(f"{d} (>= {plan[d]['version']})" for d in r["depends"]))
     if r["provides"]: ctl.append("Provides: " + ", ".join(r["provides"]))
     if c.get("conflicts"): ctl.append("Conflicts: " + ", ".join(c["conflicts"].split()))
+    if c.get("wants"): ctl.append("NZ-Wants: " + " ".join(c["wants"].split()))
+    # the versions of the other package that had the files: all before its current one
+    if replaces[deb]: ctl.append("Replaces: " + ", ".join(f"{q} (<< {plan[q]['version']})" if q in plan else q for q in sorted(replaces[deb])))
     ctl.append(f"NZ-Title: {c.get('title', deb)}")
     ctl.append(f"NZ-Contents: {pl['contents']}")
     ctl.append(f"NZ-Digest: {pl['digest']}")
@@ -305,7 +349,20 @@ for deb, r in rep["packages"].items():
     index[repo].append(control + f"Filename: {fn}\nSize: {len(blob)}\nSHA256: {hashlib.sha256(blob).hexdigest()}\n")
     changed.append(f"{deb} {ver}")
     print(f"wrote {fn} ({len(blob)/1e6:.1f} MB)")
-print(f"{len(changed)} package(s) new or changed, {len(plan) - len(changed)} kept")
+# Packages of the previous set that this build does not make (apps built in NimbleZero-apps,
+# the Store's own package, libraries built outside Buildroot) are carried over unchanged:
+# their index entry and their file.  Without this, a rebuild of the set would drop them.
+carried = []
+for deb, (v, _, prepo, pfn, stanza) in sorted(prev.items()):
+    if deb in rep["packages"]: continue
+    src = os.path.join(PREV, prepo, pfn)
+    if not os.path.exists(src): die(f"previous set lists {pfn}, which is not in {os.path.join(PREV, prepo)}")
+    os.makedirs(os.path.join(OUT, prepo), exist_ok=True)
+    open(os.path.join(OUT, prepo, pfn), "wb").write(open(src, "rb").read())
+    index[prepo].append(stanza); carried.append(f"{deb} {v} ({prepo})")
+    print(f"carried {pfn} (not made by this build)")
+open(os.path.join(OUT, "carried.txt"), "w").write("\n".join(carried) + ("\n" if carried else ""))
+print(f"{len(changed)} package(s) new or changed, {len(plan) - len(changed)} kept, {len(carried)} carried over")
 open(os.path.join(OUT, "changed.txt"), "w").write("\n".join(changed) + "\n")
 for repo in ("deps", "apps"):
     os.makedirs(os.path.join(OUT, repo), exist_ok=True)

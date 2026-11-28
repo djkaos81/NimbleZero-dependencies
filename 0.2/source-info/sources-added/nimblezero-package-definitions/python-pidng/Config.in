@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_PIDNG
+	bool "python-pidng"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_NUMPY
+	help
+	  DNG raw image writer (for picamera2).

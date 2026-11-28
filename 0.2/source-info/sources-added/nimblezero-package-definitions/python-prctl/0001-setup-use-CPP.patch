@@ -1,0 +1,25 @@
+setup.py: run the preprocessor named in $CPP
+
+The header checks run plain "cpp", the build machine's preprocessor, which does
+not see the target's headers when cross-compiling.  Use $CPP when it is set.
+
+Upstream: not sent (NimbleZero)
+
+--- a/setup.py	2026-11-28 00:28:46.364773655 -0500
++++ b/setup.py	2026-11-28 00:28:46.367355467 -0500
+@@ -33,13 +33,13 @@
+     sys.stderr.write("You need to install gcc to build this module\n")
+     sys.exit(1)
+ 
+-sp = subprocess.Popen(['cpp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ)
++sp = subprocess.Popen(os.environ.get('CPP', 'cpp').split(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ)
+ sp.communicate('#include <sys/prctl.h>\n'.encode())
+ if sp.returncode:
+     sys.stderr.write("You need to install libc development headers to build this module\n")
+     exit = True
+ 
+-sp = subprocess.Popen(['cpp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ)
++sp = subprocess.Popen(os.environ.get('CPP', 'cpp').split(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ)
+ sp.communicate('#include <sys/capability.h>\n'.encode())
+ if sp.returncode:
+     sys.stderr.write("You need to install libcap development headers to build this module\n")

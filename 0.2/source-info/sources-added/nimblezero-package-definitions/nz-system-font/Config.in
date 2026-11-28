@@ -1,0 +1,8 @@
+config BR2_PACKAGE_NZ_SYSTEM_FONT
+	bool "nz-system-font (text font of the NimbleZero screens)"
+	help
+	  The font file /usr/share/nz/fonts/nz-8.nzf that nzui.h draws
+	  all text with: NimbleZero Sans 8 (Latin, Greek, Cyrillic,
+	  converted from Press Start 2P), the NimbleZero key symbols,
+	  and Fusion Pixel 8px for Chinese, Japanese and Korean in its
+	  four forms.  Both fonts are under the SIL Open Font License.

@@ -1,0 +1,24 @@
+The text font of the NimbleZero screens (/usr/share/nz/fonts/nz-8.nzf)
+======================================================================
+
+nz-8.nzf is built by scripts/make-nz-font.py from:
+
+- NimbleZero Sans 8 (nimblezero-sans-8.bdf): Latin with its extensions, Greek, Cyrillic
+  and some symbols, 8x8.  Converted from Press Start 2P by CodeMan38 (Copyright 2012 The
+  Press Start 2P Project Authors, cody@zone38.net) with scripts/convert-ps2p-to-bdf.py.
+  SIL Open Font License 1.1, OFL-nimblezero-sans.txt.  "Press Start 2P" is a Reserved
+  Font Name of the original, so this modified version has a name of its own.
+- NimbleZero key symbols (nimblezero-keys-8.txt): Enter, Tab, Backspace, Esc, Space,
+  Shift, Ctrl, Opt, Page up/down, drawn for NimbleZero.  GPL-2.0-only, or at your
+  choice the SIL Open Font License 1.1.
+- Fusion Pixel Font 8px, monospaced, release 2026.07.20, by TakWolf
+  (https://github.com/TakWolf/fusion-pixel-font): Chinese, Japanese and Korean in four
+  forms (ja, zh-hans, zh-hant, ko).  SIL Open Font License 1.1, OFL-fusion-pixel.txt.
+  It is assembled from other pixel fonts; their licences are in fusion-pixel-sources/.
+
+Which form of the CJK characters is drawn is set in Options > East Asian text
+(/data/etc/nz/east-asian-text); a text that contains kana is always drawn in the
+Japanese form.
+
+The font file may be used and passed on under the licences above, as part of NimbleZero
+or on its own.

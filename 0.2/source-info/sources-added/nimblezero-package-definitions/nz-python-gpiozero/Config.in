@@ -1,0 +1,6 @@
+config BR2_PACKAGE_NZ_PYTHON_GPIOZERO
+	bool "nz-python-gpiozero"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_COLORZERO
+	help
+	  gpiozero for aarch64 (Buildroot's python-gpiozero is for 32-bit arm only).

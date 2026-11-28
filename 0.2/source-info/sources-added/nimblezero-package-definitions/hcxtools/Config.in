@@ -1,0 +1,10 @@
+config BR2_PACKAGE_HCXTOOLS
+	bool "hcxtools"
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_LIBCURL
+	help
+	  Tools to convert Wi-Fi captures (pcapng) for hash crackers.
+	  Wanted by M5Stack apps (Debian: hcxtools).
+
+	  https://github.com/ZerBea/hcxtools

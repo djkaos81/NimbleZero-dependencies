@@ -1,0 +1,9 @@
+config BR2_PACKAGE_HCXDUMPTOOL
+	bool "hcxdumptool"
+	select BR2_PACKAGE_LIBPCAP
+	help
+	  Capture Wi-Fi frames for security testing (needs a Wi-Fi
+	  adapter with monitor mode; the built-in one has none).
+	  Wanted by M5Stack apps (Debian: hcxdumptool).
+
+	  https://github.com/ZerBea/hcxdumptool

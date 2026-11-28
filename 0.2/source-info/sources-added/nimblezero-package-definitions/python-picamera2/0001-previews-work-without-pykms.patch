@@ -1,0 +1,24 @@
+previews: work without pykms
+
+The DRM preview needs pykms (kms++), which NimbleZero does not build.  Importing
+picamera2 failed because previews/__init__.py imports it unconditionally; make the
+DRM preview optional, as the Qt previews already are.
+
+Upstream: not sent (NimbleZero)
+
+--- a/picamera2/previews/__init__.py	2026-11-28 01:48:56.124208287 -0500
++++ b/picamera2/previews/__init__.py	2026-11-28 01:48:56.125659140 -0500
+@@ -1,3 +1,12 @@
+-from .drm_preview import DrmPreview, list_devices
++try:
++    from .drm_preview import DrmPreview, list_devices
++except ImportError:
++    # NimbleZero has no pykms (kms++); the DRM preview is unavailable, the rest works
++    def list_devices():
++        return []
++
++    class DrmPreview:
++        def __init__(self, *args, **kwargs):
++            raise RuntimeError("DrmPreview needs pykms (kms++), which this system does not have")
+ from .null_preview import NullPreview
+ from .qt_previews import QtGlPreview, QtGlPreviewDirect, QtGlPreviewWayland, QtGlPreviewWaylandDirect, QtPreview

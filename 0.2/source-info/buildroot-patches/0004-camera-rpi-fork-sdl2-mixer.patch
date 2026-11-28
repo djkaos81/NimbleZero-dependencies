@@ -1,0 +1,225 @@
+diff --git a/package/libcamera-apps/0001-core-Update-checks-for-disable_rpi_features-option.patch b/package/libcamera-apps/0001-core-Update-checks-for-disable_rpi_features-option.patch
+deleted file mode 100644
+index 1aba972d..00000000
+--- a/package/libcamera-apps/0001-core-Update-checks-for-disable_rpi_features-option.patch
++++ /dev/null
+@@ -1,52 +0,0 @@
+-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+-From: Bernd Kuhls <bernd@kuhls.net>
+-Date: Sat, 21 Jun 2025 18:12:18 +0200
+-Subject: [PATCH] core: Update checks for disable_rpi_features option
+-MIME-Version: 1.0
+-Content-Type: text/plain; charset=UTF-8
+-Content-Transfer-Encoding: 8bit
+-
+-Based on the original commit that added the sync feature there
+-were a few more options that needed the disable_rpi_features
+-code conditionals to ensure compilation against upstream
+-libcamera so add them in to ensure this works.
+-
+-Fixes:
+-../core/rpicam_app.cpp: In member function ‘void RPiCamApp::StartCamera()’:
+-../core/rpicam_app.cpp:642:78: error: ‘controls::rpi’ has not been declared
+-  642 |         if (!controls_.get(controls::ScalerCrop) && !controls_.get(controls::rpi::ScalerCrops))
+-      |                                                                              ^~~
+-../core/rpicam_app.cpp:673:49: error: ‘controls::rpi’ has not been declared
+-  673 |                         controls_.set(controls::rpi::ScalerCrops, libcamera::Span<const Rectangle>(crops.data(), crops.size()));
+-      |                                                 ^~~
+-
+-Upstream: https://github.com/raspberrypi/rpicam-apps/pull/827
+-
+-Signed-off-by: Bernd Kuhls <bernd@kuhls.net>
+----
+- core/rpicam_app.cpp | 2 ++
+- 1 file changed, 2 insertions(+)
+-
+-diff --git a/core/rpicam_app.cpp b/core/rpicam_app.cpp
+-index bed69c0..1db784f 100644
+---- a/core/rpicam_app.cpp
+-+++ b/core/rpicam_app.cpp
+-@@ -637,6 +637,7 @@ void RPiCamApp::StartCamera()
+- 	// This makes all the Request objects that we shall need.
+- 	makeRequests();
+- 
+-+#ifndef DISABLE_RPI_FEATURES
+- 	// Build a list of initial controls that we must set in the camera before starting it.
+- 	// We don't overwrite anything the application may have set before calling us.
+- 	if (!controls_.get(controls::ScalerCrop) && !controls_.get(controls::rpi::ScalerCrops))
+-@@ -672,6 +673,7 @@ void RPiCamApp::StartCamera()
+- 		else
+- 			controls_.set(controls::rpi::ScalerCrops, libcamera::Span<const Rectangle>(crops.data(), crops.size()));
+- 	}
+-+#endif
+- 
+- 	if (!controls_.get(controls::AfWindows) && !controls_.get(controls::AfMetering) &&
+- 		options_->Get().afWindow_width != 0 && options_->Get().afWindow_height != 0)
+--- 
+-2.39.5
+-
+diff --git a/package/libcamera-apps/0002-core-Switch-libcamera-string-controls.patch b/package/libcamera-apps/0002-core-Switch-libcamera-string-controls.patch
+deleted file mode 100644
+index fcebffe3..00000000
+--- a/package/libcamera-apps/0002-core-Switch-libcamera-string-controls.patch
++++ /dev/null
+@@ -1,46 +0,0 @@
+-From f3011b5fae183a463630b4168626dfefe9b4c74e Mon Sep 17 00:00:00 2001
+-From: Naushir Patuck <naush@raspberrypi.com>
+-Date: Thu, 16 Oct 2025 14:45:33 +0100
+-Subject: [PATCH] core: Switch libcamera string controls to use
+- std::string_view
+-
+-This is a change to the libcamera API, switch to std::string_view from
+-std::string.
+-
+-Signed-off-by: Naushir Patuck <naush@raspberrypi.com>
+-
+-Upstream: https://github.com/raspberrypi/rpicam-apps/commit/f3011b5fae183a463630b4168626dfefe9b4c74e
+-
+-Signed-off-by: Bernd Kuhls <bernd@kuhls.net>
+----
+- core/options.cpp    | 2 +-
+- core/rpicam_app.cpp | 3 +--
+- 2 files changed, 2 insertions(+), 3 deletions(-)
+-
+-diff --git a/core/options.cpp b/core/options.cpp
+-index cf704c2a..d3296548 100644
+---- a/core/options.cpp
+-+++ b/core/options.cpp
+-@@ -418,7 +418,7 @@ bool OptsInternal::Parse(boost::program_options::variables_map &vm, RPiCamApp *a
+- 	std::vector<std::shared_ptr<libcamera::Camera>> cameras = app->GetCameras();
+- 	if (camera < cameras.size())
+- 	{
+--		const std::string cam_id = *cameras[camera]->properties().get(libcamera::properties::Model);
+-+		const std::string_view cam_id = *cameras[camera]->properties().get(libcamera::properties::Model);
+- 
+- 		if (cam_id.find("imx708") != std::string::npos)
+- 		{
+-diff --git a/core/rpicam_app.cpp b/core/rpicam_app.cpp
+-index 9e5a2d0c..0f0b5ffa 100644
+---- a/core/rpicam_app.cpp
+-+++ b/core/rpicam_app.cpp
+-@@ -128,8 +128,7 @@ std::string const &RPiCamApp::CameraId() const
+- 
+- std::string RPiCamApp::CameraModel() const
+- {
+--	auto model = camera_->properties().get(properties::Model);
+--	return model ? *model : camera_->id();
+-+	return std::string(camera_->properties().get(properties::Model).value_or(camera_->id()));
+- }
+- 
+- void RPiCamApp::OpenCamera()
+diff --git a/package/libcamera-apps/libcamera-apps.hash b/package/libcamera-apps/libcamera-apps.hash
+index b11ea7fe..e6a19ffc 100644
+--- a/package/libcamera-apps/libcamera-apps.hash
++++ b/package/libcamera-apps/libcamera-apps.hash
+@@ -1,3 +1,3 @@
+-# Locally computed
+-sha256  b5535933ebc398616fd1b261fa9e3755dfb419e10ee7866078a8a8d99f54a59a  libcamera-apps-v1.7.0-10-ge9645231008146fa0e75c2b3e0ff8c48ad70511a.tar.gz
++# Locally computed (v1.15.0, NimbleZero buildroot-patches/0004)
++sha256  9bb02c95f41da9652fe42f10adab3bb3b5caa8b0bcde658a31c72033b5858c80  libcamera-apps-v1.15.0-git4.tar.gz
+ sha256  36dfed86bdef661a0a14ec1a1cc84c771d5a06b6f9b92e9ebb610ba711bd528a  license.txt
+diff --git a/package/libcamera-apps/libcamera-apps.mk b/package/libcamera-apps/libcamera-apps.mk
+index df7be414..d837c71c 100644
+--- a/package/libcamera-apps/libcamera-apps.mk
++++ b/package/libcamera-apps/libcamera-apps.mk
+@@ -4,8 +4,9 @@
+ #
+ ################################################################################
+ 
+-LIBCAMERA_APPS_VERSION = v1.7.0-10-ge9645231008146fa0e75c2b3e0ff8c48ad70511a
+-LIBCAMERA_APPS_SITE = $(call github,raspberrypi,rpicam-apps,$(LIBCAMERA_APPS_VERSION))
++LIBCAMERA_APPS_VERSION = v1.15.0
++LIBCAMERA_APPS_SITE = https://github.com/raspberrypi/rpicam-apps.git
++LIBCAMERA_APPS_SITE_METHOD = git
+ LIBCAMERA_APPS_LICENSE = BSD-2-Clause
+ LIBCAMERA_APPS_LICENSE_FILES = license.txt
+ LIBCAMERA_APPS_DEPENDENCIES = \
+@@ -20,7 +21,9 @@ LIBCAMERA_APPS_DEPENDENCIES = \
+ LIBCAMERA_APPS_CONF_OPTS = \
+ 	-Denable_opencv=disabled \
+ 	-Denable_tflite=disabled \
+-	-Ddisable_rpi_features=true
++	-Ddisable_rpi_features=false \
++	-Denable_wayland=disabled \
++	-Denable_hailo=disabled
+ 
+ ifeq ($(BR2_PACKAGE_LIBDRM),y)
+ LIBCAMERA_APPS_DEPENDENCIES += libdrm
+@@ -36,7 +39,7 @@ else
+ LIBCAMERA_APPS_CONF_OPTS += -Denable_libav=disabled
+ endif
+ 
+-ifeq ($(BR2_PACKAGE_XORG7),y)
++ifeq ($(BR2_PACKAGE_XORG7)$(BR2_PACKAGE_LIBEPOXY),yy)
+ LIBCAMERA_APPS_DEPENDENCIES += \
+ 	$(if $(BR2_PACKAGE_LIBEPOXY),libepoxy) \
+ 	$(if $(BR2_PACKAGE_XLIB_LIBX11),xlib_libX11)
+diff --git a/package/libcamera/libcamera.hash b/package/libcamera/libcamera.hash
+index e00e1257..b6ded8aa 100644
+--- a/package/libcamera/libcamera.hash
++++ b/package/libcamera/libcamera.hash
+@@ -1,5 +1,5 @@
+ # Locally computed
+-sha256  9e684bfcb8679e5e7ec7fb0da9dec68e71f0b75a6b0c8edcd892b26a92726a92  libcamera-v0.7.0-git4.tar.gz
++sha256  de7b5a0441757dc298887296ad03dad35b4c5cdb008cdb90766006af8a295455  libcamera-v0.8.0+rpt20261104-git4.tar.gz
+ 
+ # license files
+ sha256  fd38b2c053c0cce46d9c5ef3545a6e34d157a240ba99c9b8dca5d37a8147da6c  LICENSES/BSD-2-Clause.txt
+diff --git a/package/libcamera/libcamera.mk b/package/libcamera/libcamera.mk
+index e8f502b2..ba117458 100644
+--- a/package/libcamera/libcamera.mk
++++ b/package/libcamera/libcamera.mk
+@@ -4,8 +4,8 @@
+ #
+ ################################################################################
+ 
+-LIBCAMERA_SITE = https://git.linuxtv.org/libcamera.git
+-LIBCAMERA_VERSION = v0.7.0
++LIBCAMERA_SITE = https://github.com/raspberrypi/libcamera.git
++LIBCAMERA_VERSION = v0.8.0+rpt20261104
+ LIBCAMERA_SITE_METHOD = git
+ LIBCAMERA_DEPENDENCIES = \
+ 	host-openssl \
+diff --git a/package/pipewire/pipewire.mk b/package/pipewire/pipewire.mk
+index c1dc2aa0..d0528a04 100644
+--- a/package/pipewire/pipewire.mk
++++ b/package/pipewire/pipewire.mk
+@@ -149,12 +149,9 @@ else
+ PIPEWIRE_CONF_OPTS += -Dpipewire-v4l2=disabled -Dv4l2=disabled
+ endif
+ 
+-ifeq ($(BR2_PACKAGE_LIBCAMERA)$(BR2_PACKAGE_LIBDRM)$(BR2_PACKAGE_HAS_UDEV),yyy)
+-PIPEWIRE_CONF_OPTS += -Dlibcamera=enabled
+-PIPEWIRE_DEPENDENCIES += libcamera libdrm
+-else
++# NimbleZero: PipeWire 1.2's libcamera plugin does not build against libcamera 0.8
++# (buildroot-patches/0004); camera programs use libcamera directly.
+ PIPEWIRE_CONF_OPTS += -Dlibcamera=disabled
+-endif
+ 
+ ifeq ($(BR2_PACKAGE_LILV),y)
+ PIPEWIRE_CONF_OPTS += -Dlv2=enabled
+diff --git a/package/sdl2_mixer/sdl2_mixer.hash b/package/sdl2_mixer/sdl2_mixer.hash
+index 4592014d..704af788 100644
+--- a/package/sdl2_mixer/sdl2_mixer.hash
++++ b/package/sdl2_mixer/sdl2_mixer.hash
+@@ -1,3 +1,3 @@
+-# Locally calculated
+-sha256  7a6ba86a478648ce617e3a5e9277181bc67f7ce9876605eea6affd4a0d6eea8f  SDL2_mixer-2.6.3.tar.gz
+-sha256  1852c8549e3d154687197d46abababd3e8faae035f19991b2ca850fa3a43ad57  LICENSE.txt
++# Locally calculated (2.8.1, NimbleZero buildroot-patches/0004)
++sha256  cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660  SDL2_mixer-2.8.1.tar.gz
++sha256  7826eca0a0f7e591f38dd844e207a200aac81a59b20d8a30c3af8c6282af13e6  LICENSE.txt
+diff --git a/package/sdl2_mixer/sdl2_mixer.mk b/package/sdl2_mixer/sdl2_mixer.mk
+index 074e2822..1681e209 100644
+--- a/package/sdl2_mixer/sdl2_mixer.mk
++++ b/package/sdl2_mixer/sdl2_mixer.mk
+@@ -4,7 +4,7 @@
+ #
+ ################################################################################
+ 
+-SDL2_MIXER_VERSION = 2.6.3
++SDL2_MIXER_VERSION = 2.8.1
+ SDL2_MIXER_SOURCE = SDL2_mixer-$(SDL2_MIXER_VERSION).tar.gz
+ SDL2_MIXER_SITE = http://www.libsdl.org/projects/SDL_mixer/release
+ SDL2_MIXER_LICENSE = Zlib

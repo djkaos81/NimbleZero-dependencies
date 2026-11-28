@@ -1,0 +1,7 @@
+config BR2_PACKAGE_NZ_FONTS_NOTO_COLOR_EMOJI
+	bool "nz-fonts-noto-color-emoji"
+	help
+	  Noto Color Emoji at Debian's path
+	  (/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf), which
+	  M5Stack apps open.  The font file of Debian 13's package
+	  fonts-noto-color-emoji 2.051 (SIL Open Font License 1.1).

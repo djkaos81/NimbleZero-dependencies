@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_LIBARCHIVE_C
+	bool "python-libarchive-c"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_LIBARCHIVE
+	help
+	  Python interface to libarchive (for picamera2).

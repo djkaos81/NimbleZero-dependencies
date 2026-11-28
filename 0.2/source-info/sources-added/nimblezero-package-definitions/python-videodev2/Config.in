@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_VIDEODEV2
+	bool "python-videodev2"
+	depends on BR2_PACKAGE_PYTHON3
+
+	help
+	  Python bindings for the V4L2 API (for picamera2).

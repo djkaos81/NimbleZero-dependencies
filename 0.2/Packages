@@ -1,53 +1,70 @@
 Package: nz-alsa-plugins
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 140
-Section: dependency
-Priority: optional
-Depends: nz-libpulse (>= 0.2.1)
-Provides: libasound2-plugins (= 1.2.12)
-NZ-Title: ALSA sound service plugins
-NZ-Contents: alsa-plugins 1.2.12
-NZ-Digest: 3cef5f328a313694f4613959d6aee9468953d99e811a2556f483783b01c9a148
-Description: Lets programs that use ALSA directly play through the sound service
-Filename: nz-alsa-plugins_0.2.1_arm64.deb
-Size: 31740
-SHA256: 57ccd133b8bdcd9dee2a03dc95046dcc6d00c83053a0536a4b124d6876980730
-
-Package: nz-camera-tools
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 3536
-Section: dependency
-Priority: optional
-Depends: nz-lib-jpeg-turbo (>= 0.2.1)
-Provides: libv4l-0t64 (= 1.28.1), libv4l-0 (= 1.28.1), v4l-utils (= 1.28.1)
-NZ-Title: Camera tools
-NZ-Contents: libv4l 1.28.1
-NZ-Digest: 0bea91615912cb303a99aa9e784d25adb9a4d5327c65f254155c4534f424f732
-Description: v4l2-ctl and the libv4l libraries
-Filename: nz-camera-tools_0.2.1_arm64.deb
-Size: 871280
-SHA256: 8ef749272e8a7abcbe365a8bdea62b8d9cb5b9e2e97db638d72ded6e93b27cc3
-
-Package: nz-ffmpeg
 Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 31937
+Installed-Size: 165
 Section: dependency
 Priority: optional
-Depends: nz-lib-expat (>= 0.2.2), nz-lib-freetype (>= 0.2.1), nz-lib-harfbuzz (>= 0.2.1), nz-lib-libogg (>= 0.2.1), nz-lib-libpng (>= 0.2.1), nz-lib-libsndfile (>= 0.2.2), nz-lib-libsoxr (>= 0.2.2), nz-lib-libvorbis (>= 0.2.1), nz-lib-openjpeg (>= 0.2.1), nz-lib-opus (>= 0.2.1), nz-libpulse (>= 0.2.1)
-Provides: ffmpeg (= 7.1.5), libdrm2 (= 2.4.131), libmp3lame0 (= 3.100), libavcodec61 (= 7.1.5), libavformat61 (= 7.1.5), libavutil59 (= 7.1.5), libswscale8 (= 7.1.5), libswresample5 (= 7.1.5), libavfilter10 (= 7.1.5), libavdevice61 (= 7.1.5), libpostproc58 (= 7.1.5)
+Depends: nz-lib-libsamplerate (>= 0.2.1), nz-lib-speexdsp (>= 0.2.1), nz-libpulse (>= 0.2.3)
+Provides: libasound2-plugins (= 1.2.12)
+NZ-Title: ALSA sound service plugins
+NZ-Contents: alsa-plugins 1.2.12
+NZ-Digest: 1f8bd4ed2f2f34f12b250a7e05c26c47d0a288601f8172e2c4476d997f3dd6bf
+Description: Lets programs that use ALSA directly play through the sound service
+Filename: nz-alsa-plugins_0.2.2_arm64.deb
+Size: 35688
+SHA256: 971b001197b2f4457d779b1112910dd919c4fe78062482eb225a60fced5d0f96
+
+Package: nz-bluez
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 3786
+Section: dependency
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-libglib2 (>= 0.2.2)
+Provides: bluez (= 5.79), libbluetooth3 (= 5.79)
+NZ-Title: BlueZ (Bluetooth)
+NZ-Contents: bluez5_utils 5.79
+NZ-Digest: fe4deba177ab639d006fc3b0ff174d52b9fb55e44067bbdee1a21a1b0fa68871
+Description: Bluetooth service and tools: bluetoothd, bluetoothctl, btmon, hciattach; switch it in Services
+Filename: nz-bluez_0.2.1_arm64.deb
+Size: 872712
+SHA256: a038d2b9bd6dd9594ab1fd61b6ce498c00f3075175939d0ef13623af94baea7a
+
+Package: nz-camera-tools
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 3484
+Section: dependency
+Priority: optional
+Depends: nz-lib-jpeg-turbo (>= 0.2.2)
+Provides: libv4l-0t64 (= 1.28.1), libv4l-0 (= 1.28.1), v4l-utils (= 1.28.1)
+NZ-Title: Camera tools
+NZ-Contents: libv4l 1.28.1
+NZ-Digest: bae16aff6ea10981bb3db81a2d4bdcd127ca5cc043a4c38d28489131beddcd5b
+Description: v4l2-ctl and the libv4l libraries
+Filename: nz-camera-tools_0.2.2_arm64.deb
+Size: 848900
+SHA256: 9ecd17e2c931d66f39ce40465938f0c0c4e18d1571ccbbb6c4870bd3d6351997
+
+Package: nz-ffmpeg
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 29057
+Section: dependency
+Priority: optional
+Depends: nz-lib-fontconfig (>= 0.2.1), nz-lib-freetype (>= 0.2.2), nz-lib-harfbuzz (>= 0.2.2), nz-lib-lame (>= 0.2.1), nz-lib-libass (>= 0.2.1), nz-lib-libdrm (>= 0.2.1), nz-lib-libfribidi (>= 0.2.1), nz-lib-libogg (>= 0.2.3), nz-lib-libsoxr (>= 0.2.3), nz-lib-libvorbis (>= 0.2.3), nz-lib-libxml2 (>= 0.2.1), nz-lib-openjpeg (>= 0.2.2), nz-lib-opus (>= 0.2.2), nz-lib-speexdsp (>= 0.2.1), nz-lib-xlib-libxext (>= 0.2.1), nz-lib-xlib-libxv (>= 0.2.1), nz-libpulse (>= 0.2.3), nz-m5-runtime (>= 0.2.2)
+Provides: ffmpeg (= 7.1.5), libavcodec61 (= 7.1.5), libavformat61 (= 7.1.5), libavutil59 (= 7.1.5), libswscale8 (= 7.1.5), libswresample5 (= 7.1.5), libavfilter10 (= 7.1.5), libavdevice61 (= 7.1.5), libpostproc58 (= 7.1.5)
 NZ-Title: ffmpeg
-NZ-Contents: dav1d 1.5.3, ffmpeg 7.1.5, fontconfig 2.17.1, lame 3.100, libass 0.17.4, libdrm 2.4.131, libfribidi 1.0.16, libpthread-stubs 0.5, libtheora 1.2.0, libvpx 1.16.0, libxml2 2.15.3, speex 1.2.1, x264 baee400fa9ced6f5481a728138fed6e867b0ff7f, x265 4.1
-NZ-Digest: 1ae031ede3af29cfc7b111657de74f41595b5c13b0671ab6694e77fc03d660f7
+NZ-Contents: dav1d 1.5.3, ffmpeg 7.1.5, libtheora 1.2.0, libvpx 1.16.0, speex 1.2.1, x264 baee400fa9ced6f5481a728138fed6e867b0ff7f, x265 4.1
+NZ-Digest: 4910761a0176958b2b98a4962e5524e415776bd2339fad317e31f1e0a032e7f4
 Description: ffmpeg and ffprobe with x264, x265, VP8/9, AV1 decoding, Opus, MP3, Vorbis
-Filename: nz-ffmpeg_0.2.2_arm64.deb
-Size: 11368500
-SHA256: 398c69e68c81a9c80454ed6e678cb802bce1bf7aef1761873de0d0ea5ae6741d
+Filename: nz-ffmpeg_0.2.3_arm64.deb
+Size: 10401024
+SHA256: 7da184ef4dcbc41912b2a47ff9576f660b5787242072c5f846d1127449735440
 
 Package: nz-fonts-dejavu
 Version: 0.2.1
@@ -97,8 +114,91 @@ Filename: nz-fonts-noto-cjk_0.2.1_arm64.deb
 Size: 33940136
 SHA256: fbb42b567be88eab286b4b7de515c53a857f08b8b2a3c90fa745b3242ee15fc1
 
-Package: nz-lib-cjson
+Package: nz-fonts-noto-color-emoji
 Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 10996
+Section: dependency
+Priority: optional
+Provides: fonts-noto-color-emoji (= 2.051-0+deb13u1)
+NZ-Title: Noto Color Emoji
+NZ-Contents: nz-fonts-noto-color-emoji 2.051-0+deb13u1
+NZ-Digest: f24ce5eb7bf02dc31179fab958e66ff0e7afa05b4131e4137cad9c483fd49640
+Description: Colour emoji font (Noto Color Emoji)
+Filename: nz-fonts-noto-color-emoji_0.2.1_arm64.deb
+Size: 10106368
+SHA256: 5be36fd9a57526ad900e2261470689000d3405ae22540d29ae34f2f85fc7280e
+
+Package: nz-gpio
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1427
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: libgpiod3 (= 2.2.4), gpiod (= 2.2.4), python3-libgpiod (= 2.4.2), python3-rpi.gpio (= 0.7.1), python3-gpiozero (= 2.0.1.post3)
+NZ-Title: GPIO
+NZ-Contents: libgpiod2 2.2.4, nz-python-gpiozero 2.0.1.post3, python-colorzero 2.0, python-gpiod 2.4.2, python-rpi-gpio 0.7.1
+NZ-Digest: c7972d9829690fbf1993c8a13ba663cde865ad4dfb3eb4807d7cde9274831ed3
+Description: libgpiod 2 with its tools, and the Python modules gpiod, RPi.GPIO and gpiozero
+Filename: nz-gpio_0.2.1_arm64.deb
+Size: 344392
+SHA256: a95808adc9c42b281494bf849b92fabdee9df0818963be0a1ab4ea865878b864
+
+Package: nz-gstreamer
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 8192
+Section: dependency
+Priority: optional
+Depends: nz-camera-tools (>= 0.2.2), nz-ffmpeg (>= 0.2.3), nz-lib-libdrm (>= 0.2.1), nz-lib-libglib2 (>= 0.2.2), nz-lib-xlib-libxext (>= 0.2.1), nz-lib-xlib-libxfixes (>= 0.2.1), nz-lib-xlib-libxv (>= 0.2.1), nz-libpulse (>= 0.2.3), nz-m5-runtime (>= 0.2.2)
+Provides: libgstreamer1.0-0 (= 1.24.13), libgstreamer-plugins-base1.0-0 (= 1.24.13), gstreamer1.0-plugins-base (= 1.24.13), gstreamer1.0-plugins-good (= 1.24.13), gstreamer1.0-libav (= 1.24.13)
+NZ-Title: GStreamer
+NZ-Contents: gst1-libav 1.24.13, gst1-plugins-base 1.24.13, gst1-plugins-good 1.24.13, gstreamer1 1.24.13, libgudev 238
+NZ-Digest: c4be4f9f95171ae79646a9f71c5497812ded9d6226d0e0cb2a5090688b5deec1
+Description: GStreamer 1.24 with the base and good plugins and the ffmpeg (libav) plugin
+Filename: nz-gstreamer_0.2.1_arm64.deb
+Size: 2263444
+SHA256: 0e3b2db58f1056a891163fedfc332f8339a962871f237605dc89b53d8d5acf22
+
+Package: nz-gstreamer-libcamera
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 182
+Section: dependency
+Priority: optional
+Depends: nz-gstreamer (>= 0.2.1), nz-lib-libglib2 (>= 0.2.2), nz-libcamera (>= 0.2.1)
+NZ-Title: GStreamer camera source
+NZ-Contents: 
+NZ-Digest: 69ea17590a8a7cb9c7287bd58ff8e29c4f2bf1ff800a055f9f631eb89e5b151a
+Description: GStreamer element libcamerasrc (libcamera cameras in GStreamer pipelines)
+Filename: nz-gstreamer-libcamera_0.2.1_arm64.deb
+Size: 51600
+SHA256: 5c0cf6ad72e04fd468157862b625fc98ec1976e3dd5c4539f97a2fadf84c184c
+
+Package: nz-hackrf
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 188
+Section: dependency
+Priority: optional
+Depends: nz-lib-fftw (>= 0.2.1), nz-lib-libusb (>= 0.2.2)
+Provides: hackrf (= 2024.02.1), libhackrf0 (= 2024.02.1)
+NZ-Title: HackRF
+NZ-Contents: hackrf v2024.02.1-118-g390837715b3741902b1b13c899bfd04a0bb6b0da
+NZ-Digest: a1cef849ed40a3eced6e8104299154d9d009c1e25e9c2fb30f352500abca0e2f
+Description: HackRF radio library and tools
+Filename: nz-hackrf_0.2.1_arm64.deb
+Size: 42772
+SHA256: 7225131d5b16038c182fe988d2b006f16a4b7fea19560a1778e65e3c88a0033b
+
+Package: nz-lib-cjson
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 33
@@ -107,47 +207,80 @@ Priority: optional
 Provides: libcjson1 (= 1.7.19)
 NZ-Title: cJSON
 NZ-Contents: cjson 1.7.19
-NZ-Digest: 8d7f3a74f0d6038fa8f0512e3cc2937892bd0d52e8ed8fa652bc7066e08c723c
+NZ-Digest: 6e158fb8a408b163319f261a38ee602c0ee0ef76a0eda95a50cbcf3f75dcb15e
 Description: JSON library for C (cJSON)
-Filename: nz-lib-cjson_0.2.1_arm64.deb
-Size: 11668
-SHA256: b7dd508691e0a6f23c1986aa8963a124ed1400d79b76ed7d94da63ead4773229
+Filename: nz-lib-cjson_0.2.2_arm64.deb
+Size: 11404
+SHA256: d30ddd1e8969bbf799a297a1d7b7c8384e1f55abf87e4d97fb3b2ba13c4c979e
 
 Package: nz-lib-dbus
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 784
-Section: libs
-Priority: optional
-Depends: nz-lib-expat (>= 0.2.1)
-Provides: libdbus-1-3 (= 1.14.10)
-NZ-Title: nz-lib-dbus
-NZ-Contents: dbus 1.14.10
-NZ-Digest: 0fb2987b842ec79e06f1c256d2e048f516648197c78c6c7d745c20def5d37a95
-Description: Library package built from dbus
-Filename: nz-lib-dbus_0.2.1_arm64.deb
-Size: 218280
-SHA256: 48e153acd5a50ae3cb98868bb3d247416102f142c7f5152f3c239385f7e65b58
-
-Package: nz-lib-expat
 Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 161
+Installed-Size: 772
+Section: dependency
+Priority: optional
+Depends: nz-lib-expat (>= 0.2.3)
+Provides: libdbus-1-3 (= 1.14.10), dbus-daemon (= 1.14.10), dbus (= 1.14.10), dbus-system-bus-common (= 1.14.10)
+NZ-Title: D-Bus
+NZ-Contents: dbus 1.14.10
+NZ-Digest: 7cdbec5c0af291f31330a5524c497590f946cd346d1fbbb6315d7824fb1dfaca
+Description: D-Bus message bus: the system bus that BlueZ and other services talk over
+Filename: nz-lib-dbus_0.2.2_arm64.deb
+Size: 215988
+SHA256: 9ee76c4e20d0a56af7c48e65ac23a9020680409ce15216497c55384e9278d1b2
+
+Package: nz-lib-expat
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 157
 Section: libs
 Priority: optional
 Provides: libexpat1 (= 2.8.1)
 NZ-Title: nz-lib-expat
 NZ-Contents: expat 2.8.1
-NZ-Digest: 708916f814f4071b707ec61a2503d3292a7562e512a0f387290b06f4fe84ce4b
+NZ-Digest: d0459a5887b83be8ff3f8f55476c28ed49e47c9085c115a7fa01a619e359d0e4
 Description: Library package built from expat
-Filename: nz-lib-expat_0.2.2_arm64.deb
-Size: 52820
-SHA256: 6ee26f5c29faca5c8e31dfa72c1f3d652c6a86d512d78da4bc2aa3940dbdd013
+Filename: nz-lib-expat_0.2.3_arm64.deb
+Size: 52088
+SHA256: 144e1d3fe24e6a5f4bdad5dd97cabb8e5782bf6d320bd5af8e256b9b96f4046c
+
+Package: nz-lib-fftw
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 755
+Section: libs
+Priority: optional
+Provides: libfftw3-single3 (= 3.3.10)
+NZ-Title: FFTW
+NZ-Contents: fftw-single 3.3.10
+NZ-Digest: 2825291545c8ebe5ec468015def59d996c7d56e6bb0bb48b6b93e51f65726941
+Description: Fast Fourier transform library (single precision)
+Filename: nz-lib-fftw_0.2.1_arm64.deb
+Size: 292996
+SHA256: d35791d8e2b2e0a25a070a82e619257c096fccfa21cc7f849a69138bd8382cac
+
+Package: nz-lib-fluidsynth
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 456
+Section: libs
+Priority: optional
+Depends: nz-lib-libglib2 (>= 0.2.2)
+Provides: libfluidsynth3 (= 2.4.7)
+NZ-Title: FluidSynth
+NZ-Contents: fluidsynth 2.4.7
+NZ-Digest: 10db5e8ebb2bb91fd78eba21943b8f88387da98fc6cd896de46921b5ea3c2aa5
+Description: MIDI synthesizer library (FluidSynth 2)
+Filename: nz-lib-fluidsynth_0.2.1_arm64.deb
+Size: 172180
+SHA256: a73ce4713d940f6266958b58b0990d5e9c2c95c9e0185400479254a4eab67190
 
 Package: nz-lib-fmt
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 125
@@ -156,47 +289,66 @@ Priority: optional
 Provides: libfmt10 (= 10.1.1+ds1-4)
 NZ-Title: libfmt
 NZ-Contents: fmt 10.1.1
-NZ-Digest: 45d959eb72c0dc95d327487500d28685b16dcec46e54a40a5585597d61cfd21f
+NZ-Digest: 00825f74410011923b7a390c6801b25776a8e02455fa855f79fae4508447a9f4
 Description: Formatting library for C++ (libfmt 10, as in Debian 13)
-Filename: nz-lib-fmt_0.2.1_arm64.deb
-Size: 49860
-SHA256: 016e77cfef27d21cf5df98a804622e5e4a19d63bfb7c51ab585c5bdfa43bcadd
+Filename: nz-lib-fmt_0.2.2_arm64.deb
+Size: 49576
+SHA256: 74547a2fdf1ed5ba57f56d7524700f25d8b76c6219470fe835799f19ac4d7d62
+
+Package: nz-lib-fontconfig
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 565
+Section: libs
+Priority: optional
+Depends: nz-lib-expat (>= 0.2.3), nz-lib-freetype (>= 0.2.2)
+Provides: libfontconfig1 (= 2.17.1)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-fontconfig
+NZ-Contents: fontconfig 2.17.1
+NZ-Digest: 8af283e5aa7b1f666562c0b7a9c72f061ed0a2b61d11c03b580bfeb465249221
+Description: Library package built from fontconfig
+Filename: nz-lib-fontconfig_0.2.1_arm64.deb
+Size: 147956
+SHA256: 8f59a1b6878d486c8447d4b86ce534a826c22cd16629090117d31999907802c9
 
 Package: nz-lib-freetype
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 697
 Section: libs
 Priority: optional
-Depends: nz-lib-libpng (>= 0.2.1)
+Depends: nz-lib-libpng (>= 0.2.2)
 Provides: libfreetype6 (= 2.14.3)
 NZ-Title: nz-lib-freetype
 NZ-Contents: freetype 2.14.3
-NZ-Digest: a2ca480e6f2a1f6b91fe63de70bb8e505c1ef80e8951722605793d7709f1025a
+NZ-Digest: 886fc937cdf220a7665723503ebfaa4ab3cee002ccb54e52e4a28ab235bef6aa
 Description: Library package built from freetype
-Filename: nz-lib-freetype_0.2.1_arm64.deb
-Size: 294568
-SHA256: 42d888f56047c436271429d4d1f2473e60ab97d8a71b12c2c80af6b539fee471
+Filename: nz-lib-freetype_0.2.2_arm64.deb
+Size: 295764
+SHA256: eb302f91b8d130804a5124b58bccab0af1504b027cf6ac94e9ac6644e1b33c23
 
 Package: nz-lib-harfbuzz
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 2739
+Installed-Size: 3034
 Section: libs
 Priority: optional
-Depends: nz-lib-freetype (>= 0.2.1), nz-lib-libglib2 (>= 0.2.1)
+Depends: nz-lib-freetype (>= 0.2.2), nz-lib-libglib2 (>= 0.2.2)
+Provides: libharfbuzz0b (= 12.3.2)
 NZ-Title: nz-lib-harfbuzz
 NZ-Contents: harfbuzz 12.3.2
-NZ-Digest: 32ecce9f8c6af1a8118de51725e9c174ac6acc7fc4c0c673fc84bad56de94d8a
+NZ-Digest: a282363d979266b21bdfc1ee553500e4ca7da02522af1ee586d0eb784b4b2ab2
 Description: Library package built from harfbuzz
-Filename: nz-lib-harfbuzz_0.2.1_arm64.deb
-Size: 905140
-SHA256: 9e7b2d64b3c10b7186133ee8dccca89f4953d6d68c4d1478332b3b23f3ee9830
+Filename: nz-lib-harfbuzz_0.2.2_arm64.deb
+Size: 954924
+SHA256: ee1378ea498ff75be1822e68aba49cf17480ec65ca37dbe77a56219ca7f0b155
 
 Package: nz-lib-jpeg-turbo
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 1152
@@ -205,14 +357,114 @@ Priority: optional
 Provides: libjpeg62-turbo (= 3.1.2)
 NZ-Title: nz-lib-jpeg-turbo
 NZ-Contents: jpeg-turbo 3.1.2
-NZ-Digest: 08dd234aac3b0dd16672bb7fb41a854e85c42e21958ae3554889e01d20ff6122
+NZ-Digest: f081827a89f00d561ec642379026db48e348df7eb0d4ce620ca758a6435d2a5a
 Description: Library package built from jpeg-turbo
-Filename: nz-lib-jpeg-turbo_0.2.1_arm64.deb
-Size: 235896
-SHA256: 96959852e3002b8687e8892a13573d397f7ea8c89229e33bc16690b04a1a0e2a
+Filename: nz-lib-jpeg-turbo_0.2.2_arm64.deb
+Size: 224052
+SHA256: d9f8ef5ad46290f4001654f98d044488f2a6304400326424ea75552b5ed15acf
+
+Package: nz-lib-lame
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 367
+Section: libs
+Priority: optional
+Depends: nz-lib-libsndfile (>= 0.2.3)
+Provides: libmp3lame0 (= 3.100)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-lame
+NZ-Contents: lame 3.100
+NZ-Digest: db3825fa89479e0ac3dd00237face56f4deff6052f87a594464c26828610adcf
+Description: Library package built from lame
+Filename: nz-lib-lame_0.2.1_arm64.deb
+Size: 150000
+SHA256: 8909432305bdc7ad3317b0c7657340d212abea14df4d4ab01facfcd382ea9d33
+
+Package: nz-lib-lcms2
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 503
+Section: libs
+Priority: optional
+Depends: nz-lib-jpeg-turbo (>= 0.2.2)
+NZ-Title: nz-lib-lcms2
+NZ-Contents: lcms2 2.19
+NZ-Digest: 723202798938ce6f8c0f9bed88dabb642e56ea67077ff4fb930c8dd5e9683876
+Description: Library package built from lcms2
+Filename: nz-lib-lcms2_0.2.1_arm64.deb
+Size: 161792
+SHA256: 73e291e0a8e4ad39733e207201195b9303f56e114f5f95412ec55682064e997d
+
+Package: nz-lib-libarchive
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 793
+Section: libs
+Priority: optional
+Depends: nz-lib-libxml2 (>= 0.2.1)
+Provides: libarchive13t64 (= 3.8.7), libarchive13 (= 3.8.7)
+NZ-Title: libarchive
+NZ-Contents: libarchive 3.8.7
+NZ-Digest: 82a321d8233083dc31162477f050bb6c98f5f1be3b2a7c3ba0b922df464617fe
+Description: Archive library (libarchive 13)
+Filename: nz-lib-libarchive_0.2.1_arm64.deb
+Size: 299296
+SHA256: 735c6beac2137f84aadec4e9b8d2d82111727a8a91532b9fa4cf9efacd809d62
+
+Package: nz-lib-libass
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 202
+Section: libs
+Priority: optional
+Depends: nz-lib-fontconfig (>= 0.2.1), nz-lib-freetype (>= 0.2.2), nz-lib-harfbuzz (>= 0.2.2), nz-lib-libfribidi (>= 0.2.1), nz-lib-libpng (>= 0.2.2)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libass
+NZ-Contents: libass 0.17.4
+NZ-Digest: 6fa0b7650e2855501f070ec5928b7c0c087a3994217c3d3d68f141a4590698f7
+Description: Library package built from libass
+Filename: nz-lib-libass_0.2.1_arm64.deb
+Size: 85724
+SHA256: 37f3d239cad47bfb891749414ff0aa50346f59696a68d5f8cc0bd21259b8a399
+
+Package: nz-lib-libdrm
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 93
+Section: libs
+Priority: optional
+Provides: libdrm2 (= 2.4.131)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libdrm
+NZ-Contents: libdrm 2.4.131
+NZ-Digest: e12ccbbdae9bfdfb7ca7e44a7a974fdafbe03af7586f0b83fa2fc5a27ae45af9
+Description: Library package built from libdrm
+Filename: nz-lib-libdrm_0.2.1_arm64.deb
+Size: 31248
+SHA256: 23720529b07a556bae42eb47495c1dc73fd483542d4082bb9f8c3e6437c2693e
+
+Package: nz-lib-libevent
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 783
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-libevent
+NZ-Contents: libevent 2.1.12
+NZ-Digest: f7e92c0d35dfc639a4460a664666839ed2e3c9f806821fd5153adff37db8b750
+Description: Library package built from libevent
+Filename: nz-lib-libevent_0.2.1_arm64.deb
+Size: 166524
+SHA256: d599859ed1478d065baae5be4f818910245165e882aa751f5c6c1cffe4a6eb0f
 
 Package: nz-lib-libffi
-Version: 0.2.1
+Version: 0.2.2
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 37
@@ -220,28 +472,1082 @@ Section: libs
 Priority: optional
 NZ-Title: nz-lib-libffi
 NZ-Contents: libffi 3.4.8
-NZ-Digest: 1f7f3087d5ab16f7f639020cba575b8c8c6b834d60cfd0899d15ae768676936d
+NZ-Digest: ad5f1d5d865730d368df303dc3d68cccf70c491b1364b825aa33f43aea567e25
 Description: Library package built from libffi
-Filename: nz-lib-libffi_0.2.1_arm64.deb
-Size: 14888
-SHA256: 16477b19b1d447a0ff388f0af8ad70bc1e456dea4a7dda70645be977feab27c5
+Filename: nz-lib-libffi_0.2.2_arm64.deb
+Size: 14760
+SHA256: ca3305aa41912dcd7bc18852fc8053a92b0d7276b3acdfebeae58af1557657e8
 
-Package: nz-lib-libglib2
+Package: nz-lib-libfribidi
 Version: 0.2.1
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 4640
+Installed-Size: 136
 Section: libs
 Priority: optional
-Depends: nz-lib-libffi (>= 0.2.1)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libfribidi
+NZ-Contents: libfribidi 1.0.16
+NZ-Digest: 202d4c7999ed99743137c76d5523f9d6f07a2868e5abf213e92a7aab9bc42510
+Description: Library package built from libfribidi
+Filename: nz-lib-libfribidi_0.2.1_arm64.deb
+Size: 24040
+SHA256: 6a4befa1846264b64520efb48e824286973af8fe620ac9954b155376ea4e5dbc
+
+Package: nz-lib-libgcrypt
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1215
+Section: libs
+Priority: optional
+Depends: nz-lib-libgpg-error (>= 0.2.1)
+NZ-Title: nz-lib-libgcrypt
+NZ-Contents: libgcrypt 1.12.0
+NZ-Digest: 1e6a9f930685ab9bf09d5b24a6c44cb2e49a68e3f97551f895afb91b6a5167c0
+Description: Library package built from libgcrypt
+Filename: nz-lib-libgcrypt_0.2.1_arm64.deb
+Size: 454128
+SHA256: 479c8b077a691f81552f57331de48990c0ab2fa847fef73f8c8e991281719e90
+
+Package: nz-lib-libglib2
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 5248
+Section: libs
+Priority: optional
+Depends: nz-lib-libffi (>= 0.2.2)
 Provides: libglib2.0-0t64 (= 2.86.5), libglib2.0-0 (= 2.86.5)
-NZ-Title: nz-lib-libglib2
-NZ-Contents: libglib2 2.86.5
-NZ-Digest: 33f40a37ce014926d6c7dff4a3bd8c93780d068427cc340169215352ad179319
-Description: Library package built from libglib2
-Filename: nz-lib-libglib2_0.2.1_arm64.deb
-Size: 1247664
-SHA256: 9b0baf87ecd6eb6e764b0dbf9ab200f3c7b5b5723b21ecb16db337afcb3eae44
+NZ-Title: GLib
+NZ-Contents: libglib2 2.86.5, libglib2-bootstrap 2.86.5
+NZ-Digest: c595f51792bcf6c54e08101e9701926a81bcddb604bd3129378bb4303f241f92
+Description: GLib, GObject and GIO libraries
+Filename: nz-lib-libglib2_0.2.2_arm64.deb
+Size: 1368864
+SHA256: 83cfa1a898fb6a842bc9d190e8bd4ca573725f3320d89a500ec4a05c30f8fec3
+
+Package: nz-lib-libgme
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 292
+Section: libs
+Priority: optional
+Provides: libgme0 (= 0.6.5)
+NZ-Title: libgme
+NZ-Contents: libgme 0.6.5
+NZ-Digest: f94f602145a4b2a68adbcde010ac1761b9cc20c64444b23654d20e8550dde465
+Description: Video game music library (libgme): NES, SNES, Genesis/VGM, Game Boy, PC Engine, MSX, ZX Spectrum, Atari
+Filename: nz-lib-libgme_0.2.2_arm64.deb
+Size: 116968
+SHA256: 04fa214ba37d8a81a3a1de13df5e238c1b8a55bc64163f189197354942f57932
+
+Package: nz-lib-libgpg-error
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 220
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-libgpg-error
+NZ-Contents: libgpg-error 1.61
+NZ-Digest: 6a4c00bfcdd46c089a921a59c404e39c6f64c2175520ec4dff005e91a7f69962
+Description: Library package built from libgpg-error
+Filename: nz-lib-libgpg-error_0.2.1_arm64.deb
+Size: 74884
+SHA256: 8dc0af0b42c6cb906551f0237885f25cb70e4be9fb39d61fa55bd80b076b9167
+
+Package: nz-lib-libltdl
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 37
+Section: libs
+Priority: optional
+Replaces: nz-pulseaudio (<< 0.2.2)
+NZ-Title: libltdl
+NZ-Contents: libtool 2.4.6
+NZ-Digest: 89941f09c219a5f5ab8f6a1965b41c85032814110ccd4b83007f14869fcf102c
+Description: Library for loading plug-ins (libltdl of GNU libtool)
+Filename: nz-lib-libltdl_0.2.1_arm64.deb
+Size: 13952
+SHA256: a9bbcd2747a8886b52e16e12c79a8dbd7c6e2e3949fb3b2fdf59b8362c1bdfcf
+
+Package: nz-lib-libogg
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 33
+Section: libs
+Priority: optional
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libogg
+NZ-Contents: libogg 1.3.6
+NZ-Digest: a73355a42a8b1399735c0bc8050a95ec9b97b4602686f4ce436aaad98773e498
+Description: Library package built from libogg
+Filename: nz-lib-libogg_0.2.3_arm64.deb
+Size: 17588
+SHA256: a457d4b4e7fd9ae180aed74af4dfc8101450394d94d32edda99408e7b965aca4
+
+Package: nz-lib-libopenmpt
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1906
+Section: libs
+Priority: optional
+Depends: nz-lib-libogg (>= 0.2.3), nz-lib-libvorbis (>= 0.2.3), nz-mpg123 (>= 0.2.2)
+Provides: libopenmpt0t64 (= 0.7.13), libopenmpt0 (= 0.7.13)
+NZ-Title: libopenmpt
+NZ-Contents: libopenmpt 0.7.13
+NZ-Digest: 1e115e209aa6a75458ea94623172a6c64f2b001cf47ca8af758cdcc792579f17
+Description: Tracker music library (libopenmpt)
+Filename: nz-lib-libopenmpt_0.2.2_arm64.deb
+Size: 680760
+SHA256: 5db6c2482ee289e4c880acc07c1d508419bae47174632c203219dde267f4dd14
+
+Package: nz-lib-libpcap
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 302
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-libpcap
+NZ-Contents: libpcap 1.10.6
+NZ-Digest: 489704c1be90a9a08c118a03b5f0570d5ef7c31b2f83eb728018e5d85edb6bf8
+Description: Library package built from libpcap
+Filename: nz-lib-libpcap_0.2.1_arm64.deb
+Size: 103236
+SHA256: 721d21c745fab209bb5c03446d0efeb9572494c2d767d8916903bd6d6e615f06
+
+Package: nz-lib-libpng
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 205
+Section: libs
+Priority: optional
+Provides: libpng16-16t64 (= 1.6.58), libpng16-16 (= 1.6.58)
+NZ-Title: nz-lib-libpng
+NZ-Contents: libpng 1.6.58
+NZ-Digest: 9076e2652d82d3cfd67ffdc1a0cd98869fc48393597ae6780b367d5b58bcddbe
+Description: Library package built from libpng
+Filename: nz-lib-libpng_0.2.2_arm64.deb
+Size: 86644
+SHA256: 234351c4f19a4a364a758195550c62775b55e6089022d2115eae60425ae9a69c
+
+Package: nz-lib-libsamplerate
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1458
+Section: libs
+Priority: optional
+Provides: libsamplerate0 (= 0.2.2)
+NZ-Title: libsamplerate
+NZ-Contents: libsamplerate 0.2.2
+NZ-Digest: 64deeaf81e1279baf0dea22b58dd30b226c417450b8719c02fecc31b04004ccb
+Description: Sample rate conversion library (libsamplerate)
+Filename: nz-lib-libsamplerate_0.2.1_arm64.deb
+Size: 929580
+SHA256: 7034156a6c40434b83fdee48e2f3c7a9091278f6db119fbc3c0dc0eb9113f088
+
+Package: nz-lib-libsidplayfp
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 497
+Section: libs
+Priority: optional
+Provides: libsidplayfp6 (= 2.16.1)
+NZ-Title: libsidplayfp
+NZ-Contents: libsidplayfp 2.16.1
+NZ-Digest: 0b7e96b8d18db1af618ca42406682c202ac99498f105bc96fd4cbc4039e2eccc
+Description: Commodore 64 SID music library (libsidplayfp)
+Filename: nz-lib-libsidplayfp_0.2.2_arm64.deb
+Size: 126064
+SHA256: eec7232dd062e9cdc2fc85e97b63015ffec4a9db684f38c2eafe7854aa65046b
+
+Package: nz-lib-libsndfile
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 458
+Section: libs
+Priority: optional
+Provides: libsndfile1 (= 1.2.2)
+NZ-Title: nz-lib-libsndfile
+NZ-Contents: libsndfile 1.2.2
+NZ-Digest: 492b5715aaa61dea4c15ff88718bcc3c7a8f400d1414195d20042f00ecba8b90
+Description: Library package built from libsndfile
+Filename: nz-lib-libsndfile_0.2.3_arm64.deb
+Size: 153660
+SHA256: c1e2cc371f681265d6adb0742037335b3db1891756d2686cf986cbfaf2d2e22e
+
+Package: nz-lib-libsoxr
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 135
+Section: libs
+Priority: optional
+Provides: libsoxr0 (= 0.1.3)
+NZ-Title: libsoxr
+NZ-Contents: libsoxr 0.1.3
+NZ-Digest: 4062cfc7ed04152c3d87bfdeca827678755a173a842830f62d12c5190d2ffdbb
+Description: Sample rate conversion library (SoX resampler)
+Filename: nz-lib-libsoxr_0.2.3_arm64.deb
+Size: 49688
+SHA256: 84e40f235ecefb2a595f7996ea01c495fa7d00bb5d36df2da5779e67c3e1aac0
+
+Package: nz-lib-libusb
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 121
+Section: libs
+Priority: optional
+Provides: libusb-1.0-0 (= 2:1.0.30)
+NZ-Title: libusb
+NZ-Contents: libusb 1.0.30
+NZ-Digest: eb1ba83df70cf8b0e62e8305bf13b4c9a2ff4f9a3ea44df5c72d1c80d9a3624e
+Description: USB device access library (libusb 1.0)
+Filename: nz-lib-libusb_0.2.2_arm64.deb
+Size: 44832
+SHA256: 58f2963b0f10ecddb45e1a4fa577b68b33153a62da9f88829dba7ae3ad585130
+
+Package: nz-lib-libuv
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 205
+Section: libs
+Priority: optional
+Provides: libuv1t64 (= 1.51.0), libuv1 (= 1.51.0)
+NZ-Title: libuv
+NZ-Contents: libuv 1.51.0
+NZ-Digest: 27a04358c035eecacd6357d12ba7ef6e5fa4781cbb2015cb9884b3484e5d0ba8
+Description: Event loop library (libuv)
+Filename: nz-lib-libuv_0.2.2_arm64.deb
+Size: 73484
+SHA256: fb76f772aea71abc1c47d305caff5690201704480c0b39d0bd9fc3b0c536fbb9
+
+Package: nz-lib-libvorbis
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 845
+Section: libs
+Priority: optional
+Depends: nz-lib-libogg (>= 0.2.3)
+Provides: libvorbis0a (= 1.3.7)
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libvorbis
+NZ-Contents: libvorbis 1.3.7
+NZ-Digest: ac614b7561d37113e74cd798ab87cb8e8a801240e62f9291f73ebdd43198cd49
+Description: Library package built from libvorbis
+Filename: nz-lib-libvorbis_0.2.3_arm64.deb
+Size: 154216
+SHA256: 3792d5ace06d120b889c446457bc4246b9dfe58139698bf5dca62d22ad71378f
+
+Package: nz-lib-libxcb
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 968
+Section: libs
+Priority: optional
+Depends: nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2)
+NZ-Title: nz-lib-libxcb
+NZ-Contents: libxcb 1.17.0
+NZ-Digest: 9569577332cccc19cc1f3e419e2fa7a3d2d270b68d5c602969ba9466f98b6933
+Description: Library package built from libxcb
+Filename: nz-lib-libxcb_0.2.2_arm64.deb
+Size: 160504
+SHA256: 8cf287d898a87c14704fbac8b3d4425a6907f4d162d80d31e5678252cd2c7850
+
+Package: nz-lib-libxml2
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1314
+Section: libs
+Priority: optional
+Replaces: nz-ffmpeg (<< 0.2.3)
+NZ-Title: nz-lib-libxml2
+NZ-Contents: libxml2 2.15.3
+NZ-Digest: de14c6e60dec647fdf924b49b9c9a9bcc2e2ac2dfea8364448f6f765f7fd8e9a
+Description: Library package built from libxml2
+Filename: nz-lib-libxml2_0.2.1_arm64.deb
+Size: 447272
+SHA256: 820e2011edd0372c4bdb4db751c0ceacc50b1f7cafda53c2a55ebcd4340cc8db
+
+Package: nz-lib-libyaml
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 113
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-libyaml
+NZ-Contents: libyaml 0.2.5
+NZ-Digest: d347fb34b70e19950abf68e133f42af97739965bd627ac1b22eb436a0676895f
+Description: Library package built from libyaml
+Filename: nz-lib-libyaml_0.2.1_arm64.deb
+Size: 40728
+SHA256: 910497d479343e18d0a4cf9ade884deaf231752467d5c8e576975b95b42efa3b
+
+Package: nz-lib-openjpeg
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 692
+Section: libs
+Priority: optional
+Depends: nz-lib-lcms2 (>= 0.2.1), nz-lib-libpng (>= 0.2.2), nz-lib-tiff (>= 0.2.1)
+NZ-Title: nz-lib-openjpeg
+NZ-Contents: openjpeg 2.5.4
+NZ-Digest: f26860e89407ad13a12de455c00fea30a665f8b4e9dca49bb64130641c5bdfac
+Description: Library package built from openjpeg
+Filename: nz-lib-openjpeg_0.2.2_arm64.deb
+Size: 204664
+SHA256: d9a79fc15870111bce758e69e2be06d5d4303a362c68917049629a6c57937838
+
+Package: nz-lib-opus
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 377
+Section: libs
+Priority: optional
+Provides: libopus0 (= 1.6.1)
+NZ-Title: nz-lib-opus
+NZ-Contents: opus 1.6.1
+NZ-Digest: f830e44c02fa6e6a32e64cab5d655a27982fe627e1eb1f5f088542ef4f7fe2b4
+Description: Library package built from opus
+Filename: nz-lib-opus_0.2.2_arm64.deb
+Size: 197448
+SHA256: d4e581440e761c657cd982ddf93fab8106820c744550758dd5607d559344e27d
+
+Package: nz-lib-portaudio
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 127
+Section: libs
+Priority: optional
+Provides: libportaudio2 (= 190700_20210406)
+NZ-Title: PortAudio
+NZ-Contents: portaudio 190700_20210406
+NZ-Digest: 657dcac50852d6dcf65569f097e6984f9a3acd46b8e9cdb0b53610ecc6f202a6
+Description: Audio I/O library (PortAudio)
+Filename: nz-lib-portaudio_0.2.1_arm64.deb
+Size: 38516
+SHA256: 9a2172e09e3bc6d3b8a35ffcc4a54880f8984c432236c2a5597e1aa30a883b42
+
+Package: nz-lib-speexdsp
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 69
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-speexdsp
+NZ-Contents: speexdsp 1.2.1
+NZ-Digest: cf403a5aca0344c41f8b4413d60bcf950635584031b2856fa04a065add5b0248
+Description: Library package built from speexdsp
+Filename: nz-lib-speexdsp_0.2.1_arm64.deb
+Size: 34128
+SHA256: 105b08dc38459b62594fe10b310dead11fb71699cf4be986162b7ca54bd27e6d
+
+Package: nz-lib-sqlite
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 2664
+Section: libs
+Priority: optional
+Provides: libsqlite3-0 (= 3.51.3)
+Replaces: nz-python3 (<< 0.2.3)
+NZ-Title: nz-lib-sqlite
+NZ-Contents: sqlite 3.51.3
+NZ-Digest: d7fea3b8f488307c04058ee29ebb8c136412306cd50b34b0507949fc07029a62
+Description: Library package built from sqlite
+Filename: nz-lib-sqlite_0.2.1_arm64.deb
+Size: 872840
+SHA256: 794affe7fb5196f11d41587a5e6ac7f7622f583d928244cfe86826b6cca0c272
+
+Package: nz-lib-tiff
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 535
+Section: libs
+Priority: optional
+Depends: nz-lib-jpeg-turbo (>= 0.2.2)
+NZ-Title: nz-lib-tiff
+NZ-Contents: tiff 4.7.1
+NZ-Digest: c3deeb799b5a571a93b991222c0b4c6830259fba75a431ae035d5c5058260c3e
+Description: Library package built from tiff
+Filename: nz-lib-tiff_0.2.1_arm64.deb
+Size: 155244
+SHA256: 7c748a77dcab8dbc234c23cd8c778fc87ef3dac5bf38eecfa75f68faa267c1d2
+
+Package: nz-lib-xcb-proto
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 787
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-xcb-proto
+NZ-Contents: xcb-proto 1.17.0
+NZ-Digest: be6aedd86b36b08c2451a00f37e77d4de7de9ac3f1773e13c90c497f7374e367
+Description: Library package built from xcb-proto
+Filename: nz-lib-xcb-proto_0.2.3_arm64.deb
+Size: 107148
+SHA256: 78a513a3fcfe42e7e1adde524b7d69234efd362fce4bb491b06422f686eedfa1
+
+Package: nz-lib-xlib-libxau
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 13
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-xlib-libxau
+NZ-Contents: xlib_libXau 1.0.12
+NZ-Digest: 826226f33440ccfa248369aa6fc63360a023903a33bfc2ae897bd6cea846e8fc
+Description: Library package built from xlib_libXau
+Filename: nz-lib-xlib-libxau_0.2.2_arm64.deb
+Size: 4728
+SHA256: 81281c902643067dbc2c780da6e8624322584a7990ac40b92b9ef1dbf26455b0
+
+Package: nz-lib-xlib-libxdmcp
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 21
+Section: libs
+Priority: optional
+NZ-Title: nz-lib-xlib-libxdmcp
+NZ-Contents: xlib_libXdmcp 1.1.5
+NZ-Digest: ccf1b1214c8ce92148f4ebf94de74c4ea36282c0084d3d420e24f0a70ca68259
+Description: Library package built from xlib_libXdmcp
+Filename: nz-lib-xlib-libxdmcp_0.2.2_arm64.deb
+Size: 7600
+SHA256: b60e49f590379b936bfbbe576b0e5ef3ae2052eb012343e35403dd5ac7662e34
+
+Package: nz-lib-xlib-libxext
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 74
+Section: libs
+Priority: optional
+Depends: nz-lib-libxcb (>= 0.2.2), nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2), nz-m5-runtime (>= 0.2.2)
+NZ-Title: nz-lib-xlib-libxext
+NZ-Contents: xlib_libXext 1.3.6
+NZ-Digest: 33399b0fce6408f96ca26f054fdf03b28475732dc918648062bd866ae7a6c8b5
+Description: Library package built from xlib_libXext
+Filename: nz-lib-xlib-libxext_0.2.1_arm64.deb
+Size: 22192
+SHA256: 8ab3e507852d2f9e14c705ab2e37d01fa772490c97202bc4140807cc09d7b372
+
+Package: nz-lib-xlib-libxfixes
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 25
+Section: libs
+Priority: optional
+Depends: nz-lib-libxcb (>= 0.2.2), nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2), nz-m5-runtime (>= 0.2.2)
+NZ-Title: nz-lib-xlib-libxfixes
+NZ-Contents: xlib_libXfixes 6.0.2
+NZ-Digest: c10e2aa2e21f82b7d536a26dfdd95cfdcb8d976e960e638fd9835cf6e5fde9e0
+Description: Library package built from xlib_libXfixes
+Filename: nz-lib-xlib-libxfixes_0.2.1_arm64.deb
+Size: 7532
+SHA256: 97a646f52eb857517ede5e547632f097a9010140fdc6519895fdcf3629cafc66
+
+Package: nz-lib-xlib-libxv
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 21
+Section: libs
+Priority: optional
+Depends: nz-lib-libxcb (>= 0.2.2), nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2), nz-lib-xlib-libxext (>= 0.2.1), nz-m5-runtime (>= 0.2.2)
+NZ-Title: nz-lib-xlib-libxv
+NZ-Contents: xlib_libXv 1.0.13
+NZ-Digest: 423b0efeb476d136086a599997c79c87e666cb9c76d4a33859bc626b01ea3310
+Description: Library package built from xlib_libXv
+Filename: nz-lib-xlib-libxv_0.2.1_arm64.deb
+Size: 7144
+SHA256: b457619070677482c0863c56aebb975bc1a535f11992b823b6758aa6cda31b48
+
+Package: nz-lib-yaml-cpp
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 345
+Section: libs
+Priority: optional
+Provides: libyaml-cpp0.8 (= 0.8.0)
+NZ-Title: yaml-cpp
+NZ-Contents: yaml-cpp 0.8.0
+NZ-Digest: 4578055ce40e5324d12b8d6b488853d0360531974a8b122d2d034b540ef40e82
+Description: YAML library for C++ (yaml-cpp 0.8)
+Filename: nz-lib-yaml-cpp_0.2.2_arm64.deb
+Size: 97872
+SHA256: 51e7397cad58687e899a9d93d3544cd2c8868a50685280d0422160ea76b7faef
+
+Package: nz-libcamera
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 5369
+Section: dependency
+Priority: optional
+Depends: nz-lib-libevent (>= 0.2.1), nz-lib-libyaml (>= 0.2.1)
+Provides: libcamera0.8 (= 0.8.0+rpt20261104), libcamera-ipa (= 0.8.0+rpt20261104), python3-libcamera (= 0.8.0+rpt20261104)
+NZ-Title: libcamera
+NZ-Contents: libcamera v0.8.0+rpt20261104
+NZ-Digest: 547f3177a4e3efe777622a10bf9c338f8413b1de779924c2a150babac4f88b34
+Description: Camera library (Raspberry Pi's libcamera 0.8) with its Python module and the cam tool
+Filename: nz-libcamera_0.2.1_arm64.deb
+Size: 1222884
+SHA256: 17e61abf4a209a4808403d081802601026c18282ab7a6d6e37e5a8ca91a728db
+
+Package: nz-libpulse
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 973
+Section: libs
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-libglib2 (>= 0.2.2), nz-lib-libsndfile (>= 0.2.3)
+Provides: libpulse0 (= 17.0), pulseaudio-utils (= 17.0)
+NZ-Wants: nz-pipewire | nz-pulseaudio
+NZ-Title: PulseAudio client library
+NZ-Contents: 
+NZ-Digest: b4246ea82b3b08932a929f0fa2200a79ad737423f8495ea235a37bedb89e82a0
+Description: Library and tools that programs use to reach the sound service (PulseAudio or PipeWire)
+Filename: nz-libpulse_0.2.3_arm64.deb
+Size: 244344
+SHA256: e896a228ca078acc8e7d3e140bcc19c98422c43ff50838f0c407a3c275a11690
+
+Package: nz-m5-runtime
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 7295
+Section: runtime
+Priority: optional
+Depends: nz-lib-libxcb (>= 0.2.2), nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2)
+Provides: libinput10 (= 1.31.1), libxkbcommon0 (= 1.9.2), xkb-data (= 2.38), libevdev2 (= 1.13.5), libx11-6 (= 1.8.12)
+NZ-Title: M5Stack app runtime
+NZ-Contents: libevdev 1.13.5, libinput 1.31.1, libxkbcommon 1.9.2, xapp_xkbcomp 1.5.0, xkeyboard-config 2.38, xlib_libX11 1.8.12, xlib_libxkbfile 1.1.3, xlib_xtrans 1.6.0
+NZ-Digest: 931de26f182a36b98dbb59c7b53d2531bd8836648c9467dde2a1f3b4d3fbad06
+Description: What M5Stack app packages and the M5Stack launcher need to run on NimbleZero
+Filename: nz-m5-runtime_0.2.2_arm64.deb
+Size: 1424608
+SHA256: e99f9ecdd5291ab10b1e6de04bfc67f0b5066bf0bd9be74d8e9087492347b2e9
+
+Package: nz-mpg123
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 856
+Section: dependency
+Priority: optional
+Provides: libmpg123-0t64 (= 1.33.4), libmpg123-0 (= 1.33.4), libout123-0t64 (= 1.33.4), libout123-0 (= 1.33.4), mpg123 (= 1.33.4)
+NZ-Title: mpg123
+NZ-Contents: mpg123 1.33.4
+NZ-Digest: 1599a58d548081ea83f3f7ad2fa491762be2604157872f9778bdea024ced3fae
+Description: MP3 player and libraries (mpg123)
+Filename: nz-mpg123_0.2.2_arm64.deb
+Size: 332556
+SHA256: 15ff6fdb287ff4525e559b13d9556e98d64f980e6b5b1d48fd001bf427f7b7de
+
+Package: nz-mpv
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 8216
+Section: dependency
+Priority: optional
+Depends: nz-ffmpeg (>= 0.2.3), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-lcms2 (>= 0.2.1), nz-lib-libarchive (>= 0.2.1), nz-lib-libass (>= 0.2.1), nz-lib-libdrm (>= 0.2.1), nz-lib-libxcb (>= 0.2.2), nz-lib-xlib-libxau (>= 0.2.2), nz-lib-xlib-libxdmcp (>= 0.2.2), nz-lib-xlib-libxext (>= 0.2.1), nz-lib-xlib-libxfixes (>= 0.2.1), nz-lib-xlib-libxv (>= 0.2.1), nz-libpulse (>= 0.2.3), nz-m5-runtime (>= 0.2.2), nz-sdl2 (>= 0.2.2)
+Provides: mpv (= 0.40.0), libmpv2 (= 0.40.0)
+NZ-Title: mpv
+NZ-Contents: hwdata 0.403, libdisplay-info 0.3.0, libplacebo v7.351.0, mpv 0.40.0, xlib_libXScrnSaver 1.2.5, xlib_libXinerama 1.1.5, xlib_libXpresent 1.0.2, xlib_libXrandr 1.5.4, xlib_libXrender 0.9.12
+NZ-Digest: 3c5ed33697a7c7b34ffb0e401ab7eb83980f90ad8e0a7f7e743ccea2c0d258e9
+Description: mpv media player and libmpv
+Filename: nz-mpv_0.2.1_arm64.deb
+Size: 1857676
+SHA256: fb5a9ac89819b721aa70351f4ad13159b4098c289d404da910d6f6676d15906d
+
+Package: nz-network-tools
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 17713
+Section: dependency
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-libevent (>= 0.2.1), nz-lib-libpcap (>= 0.2.1), nz-lib-libxml2 (>= 0.2.1)
+Provides: tcpdump (= 4.99.5), nmap (= 7.98), arp-scan (= 1.10.0), nftables (= 1.1.4), ebtables (= 2.0.11), bridge-utils (= 1.7.1), wireless-tools (= 30.pre9), lldpd (= 1.0.20), dnsmasq-base (= 2.92rel2)
+NZ-Title: Network tools
+NZ-Contents: arp-scan 1.10.0, bridge-utils 1.7.1, dnsmasq 2.92rel2, ebtables 2.0.11, liblinear 2.49, libnftnl 1.3.0, lldpd 1.0.20, nftables 1.1.4, nftables-python 1.1.4, nmap 7.98, tcpdump 4.99.5, wireless_tools 30.pre9
+NZ-Digest: f123d3984ea880056d315ad0f599bd26382107ef5888484c592fe82560d9e38d
+Description: tcpdump, nmap, arp-scan, nftables, ebtables, brctl, iwconfig, lldpd, dnsmasq
+Filename: nz-network-tools_0.2.1_arm64.deb
+Size: 3332684
+SHA256: 8c4d1910d18bc3a40d360a230bf0aa29bce8b0d50223ec8ac318b9bf8fe35645
+
+Package: nz-opencv
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 26229
+Section: dependency
+Priority: optional
+Depends: nz-ffmpeg (>= 0.2.3), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-libpng (>= 0.2.2)
+Provides: python3-opencv (= 4.13.0)
+NZ-Title: OpenCV
+NZ-Contents: libabseil-cpp 20260107.1, opencv4 4.13.0, protobuf 33.5
+NZ-Digest: e992a457eb3d264535822a1ffa275897dd84b4e0e30bf47bd2a5a86730a492f7
+Description: OpenCV 4 libraries (core, image processing, codecs, video I/O) and the Python module cv2
+Filename: nz-opencv_0.2.1_arm64.deb
+Size: 6922336
+SHA256: 0c81bb77d926d8980ca67f9a07bbbf46bb1a85172e837add6e89e7f16f429736
+
+Package: nz-pipewire
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 9040
+Section: dependency
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-libglib2 (>= 0.2.2), nz-lib-libsndfile (>= 0.2.3), nz-lib-opus (>= 0.2.2), nz-libpulse (>= 0.2.3)
+Provides: pipewire (= 1.2.8), pipewire-bin (= 1.2.8), pipewire-pulse (= 1.2.8), wireplumber (= 0.5.10), libpipewire-0.3-0t64 (= 1.2.8), libpipewire-0.3-0 (= 1.2.8), libpipewire-0.3-modules (= 1.2.8), libspa-0.2-modules (= 1.2.8), pipewire-alsa (= 1.2.8)
+Conflicts: nz-pulseaudio
+NZ-Title: PipeWire
+NZ-Contents: lua 5.4.8, nz-pipewire-conf 0.1, pipewire 1.2.8, wireplumber 0.5.10
+NZ-Digest: b5fb9069fb59607907f56534a77eff4e5dc0a6b6f2d2d1f420f626366351f24c
+Description: PipeWire sound service with WirePlumber and PulseAudio compatibility
+Filename: nz-pipewire_0.2.2_arm64.deb
+Size: 1737944
+SHA256: 0f38a1cd616bda3380b67ef56fc477cba813f9a351cd502c454f275092231186
+
+Package: nz-pulseaudio
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 3455
+Section: dependency
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-fftw (>= 0.2.1), nz-lib-libltdl (>= 0.2.1), nz-lib-libsamplerate (>= 0.2.1), nz-lib-libsndfile (>= 0.2.3), nz-lib-libsoxr (>= 0.2.3), nz-lib-speexdsp (>= 0.2.1), nz-libpulse (>= 0.2.3)
+Provides: pulseaudio (= 17.0)
+Conflicts: nz-pipewire
+NZ-Title: PulseAudio
+NZ-Contents: pulseaudio 17.0
+NZ-Digest: b9898625651fdad3053300cbe123fc0ec8c7406441ef118e450e39ca29d896db
+Description: PulseAudio sound service
+Filename: nz-pulseaudio_0.2.2_arm64.deb
+Size: 707752
+SHA256: 00260955842878c19c0859e87fb069d12ec373ae3d3d18594ba221ba6bbb1b7a
+
+Package: nz-pygame
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 3774
+Section: dependency
+Priority: optional
+Depends: nz-lib-freetype (>= 0.2.2), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-libpng (>= 0.2.2), nz-python3 (>= 0.2.3), nz-sdl2 (>= 0.2.2)
+Provides: python3-pygame (= 2.6.1)
+NZ-Title: pygame
+NZ-Contents: nz-pygame 2.6.1
+NZ-Digest: 930c485b914a87d50466f0c5de634836b4c9149580222a3065fb4a10fedee7b1
+Description: pygame 2.6 for Python (SDL2; apps draw to the screen themselves)
+Filename: nz-pygame_0.2.3_arm64.deb
+Size: 1056920
+SHA256: c802df9d49f6672551eed86eb6f81339e36f437da96359ae47bec35f8f14643e
+
+Package: nz-python3
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 49849
+Section: dependency
+Priority: optional
+Depends: nz-lib-expat (>= 0.2.3), nz-lib-freetype (>= 0.2.2), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-lcms2 (>= 0.2.1), nz-lib-libffi (>= 0.2.2), nz-lib-openjpeg (>= 0.2.2), nz-lib-sqlite (>= 0.2.1), nz-lib-tiff (>= 0.2.1)
+Provides: python3 (= 3.13.16), python3-minimal (= 3.13.16), libpython3-stdlib (= 3.13.16), python3-pil (= 12.0.0), python3-pillow (= 12.0.0), python3-numpy (= 2.4.0), python3-evdev (= 1.9.2), python3-qrcode (= 8.2), python3-requests (= 2.33.1), python3-venv (= 3.13.16)
+NZ-Title: Python 3
+NZ-Contents: mpdecimal 4.0.0, python-certifi 2026.4.22, python-charset-normalizer 3.4.4, python-evdev 1.9.2, python-idna 3.11, python-numpy 2.4.0, python-pillow 12.0.0, python-qrcode 8.2, python-requests 2.33.1, python-urllib3 2.7.0, python3 3.13.16
+NZ-Digest: 0952082a8ad5647a00e7e5fe294d46839bea4fd92e8ebb3ee9ee43f1b851452a
+Description: Python 3 with Pillow, NumPy, evdev, qrcode and requests
+Filename: nz-python3_0.2.3_arm64.deb
+Size: 13405828
+SHA256: e6e30a0e5c74cdef8c1c95b929512c001d6fc024226838d17be68a0a694ad09d
+
+Package: nz-python3-bleak
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 2739
+Section: dependency
+Priority: optional
+Depends: nz-bluez (>= 0.2.1), nz-python3 (>= 0.2.3)
+Provides: python3-bleak (= 2.1.1)
+NZ-Title: Python bleak
+NZ-Contents: python-bleak 2.1.1, python-dbus-fast 3.1.2
+NZ-Digest: 30c28b60148f97cf73bf2e486aeeabc395c19d92238af8671fa2b862de3c1703
+Description: Python module for Bluetooth Low Energy (bleak)
+Filename: nz-python3-bleak_0.2.1_arm64.deb
+Size: 710220
+SHA256: 6c038741ed2c4e63869ee678bc6d03da7e2fe428dac80aa10501dd4ab546ab3f
+
+Package: nz-python3-cryptography
+Version: 0.2.3
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 5737
+Section: dependency
+Priority: optional
+Depends: nz-lib-libffi (>= 0.2.2), nz-python3 (>= 0.2.3)
+Provides: python3-cryptography (= 46.0.3), python3-bcrypt (= 5.0.0), python3-cffi (= 2.0.0), python3-cffi-backend (= 2.0.0), python3-pycparser (= 2.23)
+NZ-Title: Python cryptography
+NZ-Contents: python-bcrypt 5.0.0, python-cffi 2.0.0, python-cryptography 46.0.3, python-pycparser 2.23
+NZ-Digest: 031df1e880c781815437b3bc2d037f4ae1a4032c1b97f95b8d2549e959e18b82
+Description: Python modules cryptography, bcrypt and cffi
+Filename: nz-python3-cryptography_0.2.3_arm64.deb
+Size: 1406808
+SHA256: a083c8154186cc8eca80932c7d6f41a5aa215d68911d5969421afd44a661ccfb
+
+Package: nz-python3-dbus
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 2859
+Section: dependency
+Priority: optional
+Depends: nz-lib-dbus (>= 0.2.2), nz-lib-libffi (>= 0.2.2), nz-lib-libglib2 (>= 0.2.2), nz-python3 (>= 0.2.3)
+Provides: python3-dbus (= 1.2.18), python3-gi (= 3.54.5)
+NZ-Title: Python D-Bus and GObject
+NZ-Contents: dbus-python 1.2.18, gobject-introspection 1.84.0, python-gobject 3.54.5
+NZ-Digest: 1c5ded166033796c3c68c2790f20a5e9150f750e1102230de9a6a2e2f53ba817
+Description: Python modules dbus and gi (GObject introspection)
+Filename: nz-python3-dbus_0.2.1_arm64.deb
+Size: 582256
+SHA256: 0a7656c9f3ab58d420a2a3722780763255cdae38bc0c2ad503902f8f706113c2
+
+Package: nz-python3-extra
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 6917
+Section: dependency
+Priority: optional
+Depends: nz-lib-libyaml (>= 0.2.1), nz-python3 (>= 0.2.3)
+Provides: python3-yaml (= 6.0.3), python3-psutil (= 7.2.1), python3-wcwidth (= 0.2.14), python3-h2 (= 4.3.0), python3-h11 (= 0.16.0), python3-aiofiles (= 25.1.0), python3-cachetools (= 6.2.4), python3-jsonschema (= 4.26.0), python3-markdown-it (= 4.0.0), python3-pypinyin (= 0.55.0)
+NZ-Title: Python modules (more)
+NZ-Contents: python-aiofiles 25.1.0, python-cachetools 6.2.4, python-h11 0.16.0, python-h2 4.3.0, python-hpack 4.1.0, python-hyperframe 6.1.0, python-jsonschema 4.26.0, python-jsonschema-specifications 2025.9.1, python-markdown-it-py 4.0.0, python-mdurl 0.1.2, python-psutil 7.2.1, python-pypinyin 0.55.0, python-pyyaml 6.0.3, python-referencing 0.37.0, python-rpds-py 0.30.0, python-wcwidth 0.2.14
+NZ-Digest: c9f9ad72f2f722c51bb63d252aa2af114d292b7f90655159c43c9d5a5a94032a
+Description: Python modules yaml, psutil, wcwidth, h2, h11, aiofiles, cachetools, jsonschema, markdown-it, pypinyin
+Filename: nz-python3-extra_0.2.1_arm64.deb
+Size: 1559792
+SHA256: 9338c2c67e83adeac1591c5cfd5324fd5447b0d65f7b1838ccfdde6021d6510f
+
+Package: nz-python3-hardware
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 711
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: python3-smbus (= 4.4), python3-serial (= 3.5), python3-spidev (= 3.8), python3-smbus2 (= 0.6.0), python3-pyudev (= 0.24.4), python3-netifaces (= 0.11.0)
+NZ-Title: Python hardware modules
+NZ-Contents: python-netifaces 0.11.0, python-pyudev 0.24.4, python-serial 3.5, python-smbus2 0.6.0, python-spidev 3.8
+NZ-Digest: 33d64e907cae77afa6833dec0dc8de57081b41e6dd71ff70b2411c8b881bd1a3
+Description: Python modules serial, spidev, smbus2, pyudev, netifaces
+Filename: nz-python3-hardware_0.2.2_arm64.deb
+Size: 197700
+SHA256: 3b213e0ccc3aec3959a70ee7856294a4f403186378cefae308e6b83ef58c1dc8
+
+Package: nz-python3-mutagen
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 847
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: python3-mutagen (= 1.47.0)
+NZ-Title: Python mutagen
+NZ-Contents: python-mutagen 1.47.0
+NZ-Digest: 8b50c1ae04a372bb126b36f1cfe84c66c73434ccc109af8562b1cbebfd9f1c47
+Description: Python module for music file tags (mutagen)
+Filename: nz-python3-mutagen_0.2.2_arm64.deb
+Size: 255720
+SHA256: ee0082262f6cfcd87b6d7a86fd227afdaaafbb1aae721a916fad832048eb6338
+
+Package: nz-python3-network
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 9824
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: python3-aiohttp (= 3.13.3), python3-websockets (= 15.0.1), python3-websocket (= 1.9.0), python3-zeroconf (= 0.148.0), python3-attr (= 25.4.0), python3-multidict (= 6.7.0), python3-yarl (= 1.22.0)
+NZ-Title: Python network modules
+NZ-Contents: python-aiodns 4.0.0, python-aiohappyeyeballs 2.6.1, python-aiohttp 3.13.3, python-aiosignal 1.4.0, python-attrs 25.4.0, python-brotli 1.2.0, python-frozenlist 1.8.0, python-ifaddr 0.2.0, python-multidict 6.7.0, python-propcache 0.4.1, python-pycares 5.0.1, python-websocket-client 1.9.0, python-websockets 15.0.1, python-yarl 1.22.0, python-zeroconf 0.148.0
+NZ-Digest: 67d126227a992b3a2723636ef876306ffe3708124ac45eb605a96b7a1fe64edf
+Description: Python modules aiohttp, websockets, websocket-client, zeroconf
+Filename: nz-python3-network_0.2.2_arm64.deb
+Size: 2227476
+SHA256: 4ad66f443722bc061f6bbb7ada58ebc2dc2b617ccc6ab547aeaa782aca34048a
+
+Package: nz-python3-picamera2
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 2169
+Section: dependency
+Priority: optional
+Depends: nz-lib-jpeg-turbo (>= 0.2.2), nz-python3 (>= 0.2.3)
+Provides: python3-picamera2 (= 0.3.39)
+NZ-Title: Python picamera2
+NZ-Contents: python-libarchive-c 5.3, python-picamera2 0.3.39, python-pidng 4.0.9, python-piexif 1.1.3, python-prctl 1.8.1, python-simplejpeg 1.10.1, python-tqdm 4.67.1, python-videodev2 0.0.4
+NZ-Digest: 27b1a71208d49a5163187f4f30458e9f0268dc1524c7da6b42daa917226df0b2
+Description: Python camera module picamera2 (without its Qt and PyAV previews)
+Filename: nz-python3-picamera2_0.2.1_arm64.deb
+Size: 574884
+SHA256: 505d1c3ed621e86a5727bd80ee73657b5cd21822e51b511dfeb2c02da8ba4300
+
+Package: nz-python3-pip
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 10613
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: python3-setuptools (= 80.9.0), python3-pkg-resources (= 80.9.0), python3-pip (= 25.3)
+NZ-Title: Python pip
+NZ-Contents: python-pip 25.3, python-setuptools 80.9.0
+NZ-Digest: 46f81104c00f7c59ea2787562936a54e6e7ae4a87d26a2ca3821e73dc8f2ac75
+Description: pip and setuptools: install Python modules from the internet
+Filename: nz-python3-pip_0.2.2_arm64.deb
+Size: 2836956
+SHA256: 6aea1b100aea3d47f187557a909558699bf6f24dd0c7a5756afbbe14b56452bc
+
+Package: nz-python3-pymupdf
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 50138
+Section: dependency
+Priority: optional
+Depends: nz-lib-freetype (>= 0.2.2), nz-lib-harfbuzz (>= 0.2.2), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-libpng (>= 0.2.2), nz-lib-openjpeg (>= 0.2.2), nz-lib-xlib-libxext (>= 0.2.1), nz-m5-runtime (>= 0.2.2), nz-python3 (>= 0.2.3)
+NZ-Title: Python PyMuPDF
+NZ-Contents: gumbo-parser 0.13.2, jbig2dec 0.20, mupdf 1.23.9, python-pymupdf 1.23.22
+NZ-Digest: 8c1385a54480cac7ea7bd0193a452b0d0f2425da54fb9a89b679333cdc8c3d5d
+Description: Python PDF module PyMuPDF 1.23 (its old interface, module fitz_old)
+Filename: nz-python3-pymupdf_0.2.1_arm64.deb
+Size: 25090948
+SHA256: 5a3a3fb9d8c46298b9b777d2dafa957fa1acc4a7c8f6df1a17db105382da5795
+
+Package: nz-python3-scapy
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 10641
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: python3-scapy (= 2.7.0)
+NZ-Title: Python scapy
+NZ-Contents: python-scapy 2.7.0
+NZ-Digest: 9edd88fa0e9174dda7db5a2b5d2ecd3553f59f3c2bd6559abd40761ea67d8ccc
+Description: Python packet library scapy
+Filename: nz-python3-scapy_0.2.1_arm64.deb
+Size: 3190012
+SHA256: ff2eda50c68b97b496eb0613ef2bc990e5c5177e091b3ccdc7ac463f3d966766
+
+Package: nz-rpicam-apps
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 2123
+Section: dependency
+Priority: optional
+Depends: nz-ffmpeg (>= 0.2.3), nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-libdrm (>= 0.2.1), nz-lib-libpng (>= 0.2.2), nz-lib-tiff (>= 0.2.1), nz-libcamera (>= 0.2.1)
+Provides: rpicam-apps-core (= 1.15.0), rpicam-apps-lite (= 1.15.0), rpicam-apps (= 1.15.0)
+NZ-Title: rpicam-apps
+NZ-Contents: boost 1.83.0, libcamera-apps v1.15.0, libexif 0.6.26
+NZ-Digest: 336b7410670d0272b534547bd038e7e6b2d9645010902109d0d8ddc002784e5e
+Description: Camera programs rpicam-still, rpicam-vid, rpicam-hello, rpicam-jpeg, rpicam-raw
+Filename: nz-rpicam-apps_0.2.1_arm64.deb
+Size: 475640
+SHA256: 36085cec3dea8a79842ad0221e49f5d8ab70fcbc0df2fd03d67cac714dc71318
+
+Package: nz-rtl-sdr
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1209
+Section: dependency
+Priority: optional
+Depends: nz-lib-libusb (>= 0.2.2)
+Provides: librtlsdr0 (= 2.0.2), rtl-sdr (= 2.0.2), rtl-433 (= 25.02)
+NZ-Title: RTL-SDR
+NZ-Contents: librtlsdr ed0317e6a58c098874ac58b769cf2e609c18d9a5, rtl_433 25.02
+NZ-Digest: b4d7689b759d31616afec406e7278fd5e7db7088d262a9fe8eb83966dd777bb4
+Description: RTL-SDR radio receiver library and tools, and rtl_433
+Filename: nz-rtl-sdr_0.2.1_arm64.deb
+Size: 390672
+SHA256: feba6371aa4431491eb94d02a995eefa8da01358163478b7d38841f56b8b1385
+
+Package: nz-sdl2
+Version: 0.2.2
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 1641
+Section: dependency
+Priority: optional
+Depends: nz-lib-freetype (>= 0.2.2), nz-lib-harfbuzz (>= 0.2.2), nz-lib-libpng (>= 0.2.2)
+Provides: libsdl2-2.0-0 (= 2.32.10), libsdl2-ttf-2.0-0 (= 2.24.0), libsdl2-image-2.0-0 (= 2.8.12), libsdl2-mixer-2.0-0 (= 2.8.1)
+NZ-Title: SDL2
+NZ-Contents: sdl2 2.32.10, sdl2_image 2.8.12, sdl2_mixer 2.8.1, sdl2_ttf 2.24.0
+NZ-Digest: 6f49430cbf33636e790bdb6c79f51d2e169ec1e213e9a2f3c354c43cbb2f9565
+Description: SDL2 with the ttf, image and mixer libraries (sound and input only, no display driver)
+Filename: nz-sdl2_0.2.2_arm64.deb
+Size: 521152
+SHA256: 118af3d4ff6c938f747c0fe2869fff66732879fc470bfaee72034be533df1777
+
+Package: nz-sox
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 640
+Section: dependency
+Priority: optional
+Depends: nz-lib-lame (>= 0.2.1), nz-lib-libltdl (>= 0.2.1), nz-lib-libogg (>= 0.2.3), nz-lib-libpng (>= 0.2.2), nz-lib-libsndfile (>= 0.2.3), nz-lib-libvorbis (>= 0.2.3), nz-libpulse (>= 0.2.3)
+Provides: sox (= 7524160b29a476f7e87bc14fddf12d349f9a3c5e)
+NZ-Title: SoX
+NZ-Contents: sox 7524160b29a476f7e87bc14fddf12d349f9a3c5e
+NZ-Digest: 52172589f45cfda43fc34832c04e7f101370eedd58d7f7629ad69e3b8a1c2838
+Description: SoX sound converter and player (sox, play, rec) and libsox
+Filename: nz-sox_0.2.1_arm64.deb
+Size: 238408
+SHA256: ab2fd76c1b70e5fc274cbe57512723661257db1993d48e47c02fda4a467d72bd
+
+Package: nz-tesseract
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 29314
+Section: dependency
+Priority: optional
+Depends: nz-lib-jpeg-turbo (>= 0.2.2), nz-lib-libarchive (>= 0.2.1), nz-lib-libpng (>= 0.2.2), nz-lib-libxml2 (>= 0.2.1), nz-lib-openjpeg (>= 0.2.2), nz-lib-tiff (>= 0.2.1)
+Provides: tesseract-ocr (= 5.5.2)
+NZ-Title: Tesseract OCR
+NZ-Contents: leptonica 1.87.0, tesseract-ocr 5.5.2
+NZ-Digest: bba50fcc5a25047415111c1db399f6b22773e323e68042f3bbe6e3e5efef497f
+Description: Tesseract text recognition with English
+Filename: nz-tesseract_0.2.1_arm64.deb
+Size: 10378020
+SHA256: 6e77732813a6c16e38676302f5cd5f8c13ce1aa5ab6368a9e9aa9a7a1a4da764
+
+Package: nz-tools
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 588575
+Section: dependency
+Priority: optional
+Depends: nz-lib-expat (>= 0.2.3), nz-lib-libevent (>= 0.2.1), nz-lib-libusb (>= 0.2.2), nz-lib-libyaml (>= 0.2.1)
+Provides: tmux (= 3.6a), git (= 2.53.0), dosfstools (= 4.2), fbset (= 2.1), device-tree-compiler (= 1.7.2), usb-modeswitch (= 2.6.2), sshpass (= 1.10), kbd (= 2.9.0)
+NZ-Title: System tools
+NZ-Contents: dosfstools 4.2, dtc 1.7.2, fbset 2.1, git 2.53.0, jimtcl 0.83, kbd 2.9.0, sshpass 1.10, tmux 3.6a, usb_modeswitch 2.6.2
+NZ-Digest: 38c7c804593b10ad82fca76da8f9fe96905b8b96198aabc4dd3f01708cbd43a7
+Description: tmux, git, mkfs.fat, fbset, dtc, usb_modeswitch, sshpass, loadkeys
+Filename: nz-tools_0.2.1_arm64.deb
+Size: 5172356
+SHA256: 612dc2964bf6c338fa2ef6ba93be767491802b2176f242f90039e65812fb77e9
+
+Package: nz-wifi-audit
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 3975
+Section: dependency
+Priority: optional
+Depends: nz-lib-libgcrypt (>= 0.2.1), nz-lib-libgpg-error (>= 0.2.1), nz-lib-libpcap (>= 0.2.1), nz-lib-sqlite (>= 0.2.1)
+Provides: aircrack-ng (= 1.7), reaver (= 1.6.6), hcxtools (= 8.0.0), hcxdumptool (= 8.0.0)
+NZ-Title: Wi-Fi audit tools
+NZ-Contents: aircrack-ng 1.7, hcxdumptool 8.0.0, hcxtools 8.0.0, reaver 1.6.6
+NZ-Digest: 8fcf65c971423c517b0b06c3008e7009227d928a622476831535bcf97f5e3d8f
+Description: aircrack-ng, reaver, hcxtools and hcxdumptool (only for networks you may test)
+Filename: nz-wifi-audit_0.2.1_arm64.deb
+Size: 654588
+SHA256: 4bc30427e81060d1ff4099355edb120dc58729cfecaa4d02fdf9d9fb7eed0743
+
+Package: nz-wireshark
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 133829
+Section: dependency
+Priority: optional
+Depends: nz-lib-libgcrypt (>= 0.2.1), nz-lib-libglib2 (>= 0.2.2), nz-lib-libpcap (>= 0.2.1), nz-lib-libxml2 (>= 0.2.1), nz-lib-opus (>= 0.2.2), nz-lib-speexdsp (>= 0.2.1)
+Provides: tshark (= 4.4.15)
+NZ-Title: Wireshark (tshark)
+NZ-Contents: wireshark 4.4.15
+NZ-Digest: e87206236c53e665aa3655d1194bc61c3276cc482a2b389bb7db7bb47b78b264
+Description: Wireshark's terminal programs tshark, dumpcap and editcap
+Filename: nz-wireshark_0.2.1_arm64.deb
+Size: 19719772
+SHA256: 9d278e966ee3e0cb41ffa232e8cfc442344b3f4c7864e34c81fbd1e1b7700ff6
+
+Package: nz-yt-dlp
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 10937
+Section: dependency
+Priority: optional
+Depends: nz-python3 (>= 0.2.3)
+Provides: yt-dlp (= 2026.11.23)
+NZ-Title: yt-dlp
+NZ-Contents: python-yt-dlp 2026.11.23
+NZ-Digest: 50dbc0d4eaeafb3605e0d6eb20d6c5eaa9b62e6902f3a102bafe2a9da0d38ba4
+Description: yt-dlp video downloader
+Filename: nz-yt-dlp_0.2.1_arm64.deb
+Size: 3312564
+SHA256: 89af62533506aba96eb791a6da804e79cbbf0112ff0b56ca728844e0fbe28b83
+
+Package: nz-zbar
+Version: 0.2.1
+Architecture: arm64
+Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Installed-Size: 293
+Section: dependency
+Priority: optional
+Depends: nz-camera-tools (>= 0.2.2), nz-lib-dbus (>= 0.2.2), nz-lib-jpeg-turbo (>= 0.2.2)
+Provides: python3-zbar (= 0.23.93), libzbar0t64 (= 0.23.93), libzbar0 (= 0.23.93)
+NZ-Title: ZBar
+NZ-Contents: zbar 0.23.93
+NZ-Digest: a4df656307df3f4272d63a595a652730fa3813ba22844c992d6f6237627224b0
+Description: Barcode and QR code reader zbarcam, its library and Python module
+Filename: nz-zbar_0.2.1_arm64.deb
+Size: 109644
+SHA256: 09a36f048168f3e541b4036fad251987f5e60641e57bad1acca23ab8c96bd49d
 
 Package: nz-lib-libidn2
 Version: 0.2.1
@@ -258,498 +1564,3 @@ Description: Library for international domain names (libidn2)
 Filename: nz-lib-libidn2_0.2.1_arm64.deb
 Size: 67824
 SHA256: 2882d0358caa809f8c5563db80adf971c9234dde944eaa5f146fc198beca10a8
-
-Package: nz-lib-libogg
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 33
-Section: libs
-Priority: optional
-Replaces: nz-ffmpeg (<< 0.2.2)
-NZ-Title: nz-lib-libogg
-NZ-Contents: libogg 1.3.6
-NZ-Digest: 10352812fbc0728e5cab3ff7f967d80e1c979e1caa36d62f843e55d06ac2639b
-Description: Library package built from libogg
-Filename: nz-lib-libogg_0.2.2_arm64.deb
-Size: 17644
-SHA256: a92b2af3067e2f74748f9b7da74494f9f9345873eb9ff0ae7ac3bc9d263bf3e7
-
-Package: nz-lib-libopenmpt
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 1970
-Section: libs
-Priority: optional
-Depends: nz-lib-libogg (>= 0.2.1), nz-lib-libvorbis (>= 0.2.1), nz-mpg123 (>= 0.2.1)
-Provides: libopenmpt0t64 (= 0.7.13), libopenmpt0 (= 0.7.13)
-NZ-Title: libopenmpt
-NZ-Contents: libopenmpt 0.7.13
-NZ-Digest: 93bd18f9a4b915e879965819c993f4c2bf5b86fb8740fd13090db7ee98b77027
-Description: Tracker music library (libopenmpt)
-Filename: nz-lib-libopenmpt_0.2.1_arm64.deb
-Size: 706216
-SHA256: a755cf32f3156d71da1da1bf25cc00af56ea22c8f51ff5c1f3756a0c833a0777
-
-Package: nz-lib-libpng
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 205
-Section: libs
-Priority: optional
-Provides: libpng16-16t64 (= 1.6.58), libpng16-16 (= 1.6.58)
-NZ-Title: nz-lib-libpng
-NZ-Contents: libpng 1.6.58
-NZ-Digest: 0e7e5af6ea0fbd4e9509d478f362d2acd9b61a84a9214beaa12c2abf23d5d59a
-Description: Library package built from libpng
-Filename: nz-lib-libpng_0.2.1_arm64.deb
-Size: 87192
-SHA256: fd1071802adeb121eabc1caf86d5621ec9124c346ef7648116a45a9cbfee8d57
-
-Package: nz-lib-libsndfile
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 454
-Section: libs
-Priority: optional
-Provides: libsndfile1 (= 1.2.2)
-NZ-Title: nz-lib-libsndfile
-NZ-Contents: libsndfile 1.2.2
-NZ-Digest: f3650084b6632335203a2ed88ca55541c7ca478bcb461d6788ffcd0f23ec9855
-Description: Library package built from libsndfile
-Filename: nz-lib-libsndfile_0.2.2_arm64.deb
-Size: 151912
-SHA256: 2b128ae67b5b71772775a4a394de4fbbb6638a6df3e8f843bf11f7ff470ebcb4
-
-Package: nz-lib-libsoxr
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 135
-Section: libs
-Priority: optional
-Provides: libsoxr0 (= 0.1.3)
-NZ-Title: libsoxr
-NZ-Contents: libsoxr 0.1.3
-NZ-Digest: b5fdd9033ca2fb7b981ec5b779a0acad57613769c815c166359377026c60c2ae
-Description: Sample rate conversion library (SoX resampler)
-Filename: nz-lib-libsoxr_0.2.2_arm64.deb
-Size: 51600
-SHA256: 13dd0b4b0a08f18debf7963a37cb5e81bc542f500d9427149331a0e09f3de3d3
-
-Package: nz-lib-libusb
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 125
-Section: libs
-Priority: optional
-Provides: libusb-1.0-0 (= 2:1.0.30)
-NZ-Title: libusb
-NZ-Contents: libusb 1.0.30
-NZ-Digest: ba6a4f1b604075804eb8b1b70828887a53bc462b62046a539efb156e138ea7b7
-Description: USB device access library (libusb 1.0)
-Filename: nz-lib-libusb_0.2.1_arm64.deb
-Size: 45408
-SHA256: 9b6bb45862c1bf07f89aceffdcfc48138ceadfac2ac9aae31d169918af765488
-
-Package: nz-lib-libuv
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 205
-Section: libs
-Priority: optional
-Provides: libuv1t64 (= 1.51.0), libuv1 (= 1.51.0)
-NZ-Title: libuv
-NZ-Contents: libuv 1.51.0
-NZ-Digest: fef634046637c073e9f04dbc4d8a754da53e2a42f003b6166600e8a3040b1732
-Description: Event loop library (libuv)
-Filename: nz-lib-libuv_0.2.1_arm64.deb
-Size: 74040
-SHA256: 44384b29da532726efd45e526d1d73fa5e4044b8e8f1658174e05e9605e30d7b
-
-Package: nz-lib-libvorbis
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 841
-Section: libs
-Priority: optional
-Depends: nz-lib-libogg (>= 0.2.2)
-Provides: libvorbis0a (= 1.3.7)
-Replaces: nz-ffmpeg (<< 0.2.2)
-NZ-Title: nz-lib-libvorbis
-NZ-Contents: libvorbis 1.3.7
-NZ-Digest: 49e3ceaeb8443be4da3aa91650c8eed9d6aa8601060d4ec97d624abf7d277eb5
-Description: Library package built from libvorbis
-Filename: nz-lib-libvorbis_0.2.2_arm64.deb
-Size: 153376
-SHA256: 74963089dce270bf0555c18a1c4eee3b9c3193f93f397b02783500cc16836c71
-
-Package: nz-lib-libxcb
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 972
-Section: libs
-Priority: optional
-Depends: nz-lib-xlib-libxau (>= 0.2.1), nz-lib-xlib-libxdmcp (>= 0.2.1)
-NZ-Title: nz-lib-libxcb
-NZ-Contents: libxcb 1.17.0
-NZ-Digest: 7691967c744f184d5a2726b1a5b364b3241e70d53b61fcb61a1fb7e1c5f372f9
-Description: Library package built from libxcb
-Filename: nz-lib-libxcb_0.2.1_arm64.deb
-Size: 164808
-SHA256: 3e6e8bf21b8d623ff3e2cd43bbab6a79327e77984b0e7dfeea1fed6b5e3225f1
-
-Package: nz-lib-openjpeg
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 632
-Section: libs
-Priority: optional
-Depends: nz-lib-libpng (>= 0.2.1)
-NZ-Title: nz-lib-openjpeg
-NZ-Contents: openjpeg 2.5.4
-NZ-Digest: 48d8286cffec4d75a4482fa07db7f2e995810cf8f6aaf5251be2f36755784e2d
-Description: Library package built from openjpeg
-Filename: nz-lib-openjpeg_0.2.1_arm64.deb
-Size: 197276
-SHA256: 316c10b847f54dd08d164ed2e447d25d43599742a156d5efae55aa8395a0d95a
-
-Package: nz-lib-opus
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 373
-Section: libs
-Priority: optional
-Provides: libopus0 (= 1.6.1)
-NZ-Title: nz-lib-opus
-NZ-Contents: opus 1.6.1
-NZ-Digest: 52727cf4e0aed59da2fb6dc3d6bc197244103c0a7a9a5f22e306be0578065cb7
-Description: Library package built from opus
-Filename: nz-lib-opus_0.2.1_arm64.deb
-Size: 194592
-SHA256: d14ecd9038cb546ffbb6d073100a82b4e9b84af08ad77355b412525e6fe6930e
-
-Package: nz-lib-xcb-proto
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 694
-Section: libs
-Priority: optional
-NZ-Title: nz-lib-xcb-proto
-NZ-Contents: xcb-proto 1.17.0
-NZ-Digest: b509107b659a61e8df606dd10360b8b7656317e09df82a409a5e61a2fffc2252
-Description: Library package built from xcb-proto
-Filename: nz-lib-xcb-proto_0.2.2_arm64.deb
-Size: 78372
-SHA256: 038084984bfce8d8fa903bf5daaf2ca33d58e2533878ed6ce24385e2304c1377
-
-Package: nz-lib-xlib-libxau
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 13
-Section: libs
-Priority: optional
-NZ-Title: nz-lib-xlib-libxau
-NZ-Contents: xlib_libXau 1.0.12
-NZ-Digest: b708e2c208e6de9c78d96b851c342640b8f56d8c8234f503ba8c256df8eb209b
-Description: Library package built from xlib_libXau
-Filename: nz-lib-xlib-libxau_0.2.1_arm64.deb
-Size: 4816
-SHA256: 2756d23ccfa2366da41cec3338bf44cea5228f80e3d93f89cd6daf9b6d6c7568
-
-Package: nz-lib-xlib-libxdmcp
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 21
-Section: libs
-Priority: optional
-NZ-Title: nz-lib-xlib-libxdmcp
-NZ-Contents: xlib_libXdmcp 1.1.5
-NZ-Digest: aaec16bae92f79f12f2151106439a2503473e5cff6747a7f8e55129a87685a88
-Description: Library package built from xlib_libXdmcp
-Filename: nz-lib-xlib-libxdmcp_0.2.1_arm64.deb
-Size: 7620
-SHA256: 55f9909be973a5c2ff6f60dff18d68245acceb4288cf42b0759a53b04dfd0a64
-
-Package: nz-lib-yaml-cpp
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 349
-Section: libs
-Priority: optional
-Provides: libyaml-cpp0.8 (= 0.8.0)
-NZ-Title: yaml-cpp
-NZ-Contents: yaml-cpp 0.8.0
-NZ-Digest: f5a4d633d708bfaada6adbdc08966c4369021e3998050d55d1156ecc7cd0fa87
-Description: YAML library for C++ (yaml-cpp 0.8)
-Filename: nz-lib-yaml-cpp_0.2.1_arm64.deb
-Size: 100136
-SHA256: 02d88c4e355335a6d2dfc219213ec9e623610dea12ac55df7ff95ef83a9eff15
-
-Package: nz-libpulse
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 1025
-Section: libs
-Priority: optional
-Depends: nz-lib-dbus (>= 0.2.1), nz-lib-libglib2 (>= 0.2.1), nz-lib-libsndfile (>= 0.2.2)
-Provides: libpulse0 (= 17.0), pulseaudio-utils (= 17.0)
-NZ-Wants: nz-pipewire | nz-pulseaudio
-NZ-Title: PulseAudio client library
-NZ-Contents: 
-NZ-Digest: 36b3538404447efdab2020cb9058d9e98babbf0cbcbd92a842b1b72797858fcc
-Description: Library and tools that programs use to reach the sound service (PulseAudio or PipeWire)
-Filename: nz-libpulse_0.2.2_arm64.deb
-Size: 248612
-SHA256: 971d4a940dbd8dfe051bad6c7ccb2f26291e7883dc0b451c7dbfd8a5e1ca8088
-
-Package: nz-m5-runtime
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 7245
-Section: runtime
-Priority: optional
-Depends: nz-lib-libxcb (>= 0.2.1), nz-lib-xlib-libxau (>= 0.2.1), nz-lib-xlib-libxdmcp (>= 0.2.1)
-Provides: libinput10 (= 1.31.1), libxkbcommon0 (= 1.9.2), xkb-data (= 2.38), libevdev2 (= 1.13.5)
-NZ-Title: M5Stack app runtime
-NZ-Contents: libevdev 1.13.5, libinput 1.31.1, libxkbcommon 1.9.2, xapp_xkbcomp 1.5.0, xkeyboard-config 2.38, xlib_libX11 1.8.12, xlib_libxkbfile 1.1.3, xlib_xtrans 1.6.0
-NZ-Digest: d5347da6e1ee15e28e9d9af48417dff39f92a8d622d9ee6defeb95835877a586
-Description: What M5Stack app packages and the M5Stack launcher need to run on NimbleZero
-Filename: nz-m5-runtime_0.2.1_arm64.deb
-Size: 1414876
-SHA256: 6755a4e07317e3e4042aea0af48d3439796496ccd352895fae79cb80436725bd
-
-Package: nz-mpg123
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 852
-Section: dependency
-Priority: optional
-Provides: libmpg123-0t64 (= 1.33.4), libmpg123-0 (= 1.33.4), libout123-0t64 (= 1.33.4), libout123-0 (= 1.33.4), mpg123 (= 1.33.4)
-NZ-Title: mpg123
-NZ-Contents: mpg123 1.33.4
-NZ-Digest: 62a19c230fc15d20dcded12a103471088dbbe8788a0ba5b36353ffaed9d5a413
-Description: MP3 player and libraries (mpg123)
-Filename: nz-mpg123_0.2.1_arm64.deb
-Size: 328748
-SHA256: f22ddfbcd9fc599cbe4f6b86590a81b675cbaac6e14ec248353906272911eeed
-
-Package: nz-pipewire
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 8913
-Section: dependency
-Priority: optional
-Depends: nz-lib-dbus (>= 0.2.1), nz-lib-libglib2 (>= 0.2.1), nz-lib-libsndfile (>= 0.2.1), nz-lib-opus (>= 0.2.1), nz-libpulse (>= 0.2.1)
-Provides: pipewire (= 1.2.8), pipewire-bin (= 1.2.8), pipewire-pulse (= 1.2.8), wireplumber (= 0.5.10), libpipewire-0.3-0t64 (= 1.2.8), libpipewire-0.3-0 (= 1.2.8), libpipewire-0.3-modules (= 1.2.8), libspa-0.2-modules (= 1.2.8), pipewire-alsa (= 1.2.8)
-Conflicts: nz-pulseaudio
-NZ-Title: PipeWire
-NZ-Contents: lua 5.4.8, nz-pipewire-conf 0.1, pipewire 1.2.8, wireplumber 0.5.10
-NZ-Digest: 3f93a1c2726a916917e20383d73aab0045f433591e7541f88760b683ad9132d7
-Description: PipeWire sound service with WirePlumber and PulseAudio compatibility
-Filename: nz-pipewire_0.2.1_arm64.deb
-Size: 1722276
-SHA256: 5851e93c6b1d2cd82739934da9a83c7c17e537aef646785428a6ebf65d128cbf
-
-Package: nz-pulseaudio
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 3464
-Section: dependency
-Priority: optional
-Depends: nz-lib-dbus (>= 0.2.1), nz-lib-libsndfile (>= 0.2.1), nz-lib-libsoxr (>= 0.2.1), nz-libpulse (>= 0.2.1)
-Provides: pulseaudio (= 17.0)
-Conflicts: nz-pipewire
-NZ-Title: PulseAudio
-NZ-Contents: libtool 2.4.6, pulseaudio 17.0
-NZ-Digest: 4be69690e0f5441797f91b6b4828a522d10a4e45dd49ed15a91a124479c1f1df
-Description: PulseAudio sound service
-Filename: nz-pulseaudio_0.2.1_arm64.deb
-Size: 701200
-SHA256: 09fb682aef095fc6269bb3aa7d4c424ff0fda582929e64867b371ed871e80f7a
-
-Package: nz-pygame
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 3802
-Section: dependency
-Priority: optional
-Depends: nz-lib-freetype (>= 0.2.1), nz-lib-jpeg-turbo (>= 0.2.1), nz-lib-libpng (>= 0.2.1), nz-python3 (>= 0.2.2), nz-sdl2 (>= 0.2.1)
-Provides: python3-pygame (= 2.6.1)
-NZ-Title: pygame
-NZ-Contents: nz-pygame 2.6.1
-NZ-Digest: c33af202dc1e19275398ec5efd9051cc7a9ca30ac22168c8e0f63c78e403feae
-Description: pygame 2.6 for Python (SDL2; apps draw to the screen themselves)
-Filename: nz-pygame_0.2.2_arm64.deb
-Size: 1065580
-SHA256: be727c4d91ef4f2545372eed345d9d877f377b6dc70d9a369f13b95efd3af88d
-
-Package: nz-python3
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 63847
-Section: dependency
-Priority: optional
-Depends: nz-lib-expat (>= 0.2.2), nz-lib-freetype (>= 0.2.1), nz-lib-jpeg-turbo (>= 0.2.1), nz-lib-libffi (>= 0.2.1), nz-lib-openjpeg (>= 0.2.1)
-Provides: python3 (= 3.13.16), python3-minimal (= 3.13.16), libpython3-stdlib (= 3.13.16), python3-pil (= 12.0.0), python3-pillow (= 12.0.0), python3-numpy (= 2.4.0), python3-evdev (= 1.9.2), python3-qrcode (= 8.2), python3-requests (= 2.33.1), libsqlite3-0 (= 3.51.3), python3-venv (= 3.13.16)
-NZ-Title: Python 3
-NZ-Contents: mpdecimal 4.0.0, python-certifi 2026.4.22, python-charset-normalizer 3.4.4, python-evdev 1.9.2, python-idna 3.11, python-numpy 2.4.0, python-pillow 12.0.0, python-pybind 3.0.1, python-qrcode 8.2, python-requests 2.33.1, python-urllib3 2.7.0, python3 3.13.16, sqlite 3.51.3
-NZ-Digest: 505e0478da84cc2e255812822399a6cc515ce3da8d947595b50b3b5ceee84010
-Description: Python 3 with Pillow, NumPy, evdev, qrcode and requests
-Filename: nz-python3_0.2.2_arm64.deb
-Size: 14385480
-SHA256: 0beef7e529e4cdf0de2e3542acaeff9905a85416746f88c15059e6cea0d67987
-
-Package: nz-python3-cryptography
-Version: 0.2.2
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 5749
-Section: dependency
-Priority: optional
-Depends: nz-lib-libffi (>= 0.2.1), nz-python3 (>= 0.2.2)
-Provides: python3-cryptography (= 46.0.3), python3-bcrypt (= 5.0.0), python3-cffi (= 2.0.0), python3-cffi-backend (= 2.0.0), python3-pycparser (= 2.23)
-NZ-Title: Python cryptography
-NZ-Contents: python-bcrypt 5.0.0, python-cffi 2.0.0, python-cryptography 46.0.3, python-pycparser 2.23
-NZ-Digest: b55c4f9f4be5ea9010aa59b2a657ce193f58ee5e48e53cd1c90606c290489e15
-Description: Python modules cryptography, bcrypt and cffi
-Filename: nz-python3-cryptography_0.2.2_arm64.deb
-Size: 1408116
-SHA256: 4b57404c44c2fd41f9ae2340fd365eff9533ae7e85cf52973f2820862209907c
-
-Package: nz-python3-hardware
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 711
-Section: dependency
-Priority: optional
-Depends: nz-python3 (>= 0.2.2)
-Provides: python3-smbus (= 4.4), python3-serial (= 3.5), python3-spidev (= 3.8), python3-smbus2 (= 0.6.0), python3-pyudev (= 0.24.4), python3-netifaces (= 0.11.0)
-NZ-Title: Python hardware modules
-NZ-Contents: python-netifaces 0.11.0, python-pyudev 0.24.4, python-serial 3.5, python-smbus2 0.6.0, python-spidev 3.8
-NZ-Digest: 4aa76833700b28b9a5e1a174c42a27390050e791e099441d944788bc73f9cb31
-Description: Python modules serial, spidev, smbus2, pyudev, netifaces
-Filename: nz-python3-hardware_0.2.1_arm64.deb
-Size: 197688
-SHA256: 642f381e619f6b3bcb319c841b563c58bc06d61f8905c23a22d45498f7ad9514
-
-Package: nz-python3-mutagen
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 847
-Section: dependency
-Priority: optional
-Depends: nz-python3 (>= 0.2.2)
-Provides: python3-mutagen (= 1.47.0)
-NZ-Title: Python mutagen
-NZ-Contents: python-mutagen 1.47.0
-NZ-Digest: 1b98988c06c2cbcf670f1f8a6bd93393aeb0775e810598be7bcbd3543d4b0ad9
-Description: Python module for music file tags (mutagen)
-Filename: nz-python3-mutagen_0.2.1_arm64.deb
-Size: 255776
-SHA256: 8fdff4af7e3006c9d03785ebbbd9830f1757e09bf709c3d56d3cdc9f6ed5a2b0
-
-Package: nz-python3-network
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 9776
-Section: dependency
-Priority: optional
-Depends: nz-python3 (>= 0.2.2)
-Provides: python3-aiohttp (= 3.13.3), python3-websockets (= 15.0.1), python3-websocket (= 1.9.0), python3-zeroconf (= 0.148.0), python3-attr (= 25.4.0), python3-multidict (= 6.7.0), python3-yarl (= 1.22.0)
-NZ-Title: Python network modules
-NZ-Contents: python-aiodns 4.0.0, python-aiohappyeyeballs 2.6.1, python-aiohttp 3.13.3, python-aiosignal 1.4.0, python-attrs 25.4.0, python-brotli 1.2.0, python-frozenlist 1.8.0, python-ifaddr 0.2.0, python-multidict 6.7.0, python-propcache 0.4.1, python-pycares 5.0.1, python-websocket-client 1.9.0, python-websockets 15.0.1, python-yarl 1.22.0, python-zeroconf 0.148.0
-NZ-Digest: 6bdf1e57a08ee8089d29d05e9d8a39ecaa318bb199c44dc63fdebe682050121b
-Description: Python modules aiohttp, websockets, websocket-client, zeroconf
-Filename: nz-python3-network_0.2.1_arm64.deb
-Size: 2209932
-SHA256: d9e9af4d15827fc97e70b6354cfa98074481b1f6e8d85fb190f654cc457e9d9f
-
-Package: nz-python3-pip
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 10613
-Section: dependency
-Priority: optional
-Depends: nz-python3 (>= 0.2.2)
-Provides: python3-setuptools (= 80.9.0), python3-pkg-resources (= 80.9.0), python3-pip (= 25.3)
-NZ-Title: Python pip
-NZ-Contents: python-pip 25.3, python-setuptools 80.9.0
-NZ-Digest: 5d67f38bbbf244b3f6dfeaf33181e854dcf565dc3bf9e5e04e159e0fc2f0033a
-Description: pip and setuptools: install Python modules from the internet
-Filename: nz-python3-pip_0.2.1_arm64.deb
-Size: 2836956
-SHA256: 1884db0ab5dd9f3bfb125e72885e7d81963b2b9833af4208585109f08bd2a28a
-
-Package: nz-sdl2
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 1645
-Section: dependency
-Priority: optional
-Depends: nz-lib-freetype (>= 0.2.1), nz-lib-harfbuzz (>= 0.2.1), nz-lib-libpng (>= 0.2.1)
-Provides: libsdl2-2.0-0 (= 2.32.10), libsdl2-ttf-2.0-0 (= 2.24.0), libsdl2-image-2.0-0 (= 2.8.12), libsdl2-mixer-2.0-0 (= 2.6.3)
-NZ-Title: SDL2
-NZ-Contents: sdl2 2.32.10, sdl2_image 2.8.12, sdl2_mixer 2.6.3, sdl2_ttf 2.24.0
-NZ-Digest: 87502d4fa96f40a444df007416ea113065879c1e6fdc9c457dd67d381d0f8846
-Description: SDL2 with the ttf, image and mixer libraries (sound and input only, no display driver)
-Filename: nz-sdl2_0.2.1_arm64.deb
-Size: 525108
-SHA256: a23b3d4f9f4f832b90cf1fae9c408c4400cff51fd20d01e66693cb31b6dc49bf
-
-Package: nz-lib-libgme
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 288
-Section: libs
-Priority: optional
-Provides: libgme0 (= 0.6.5)
-NZ-Title: libgme
-NZ-Contents: game-music-emu 0.6.5
-NZ-Digest: fa6d8bd804463ac22beabdaa3c29f41b141ab6c1e7c46d1b3d50aa7809f7df23
-Description: Video game music library (libgme): NES, SNES, Genesis/VGM, Game Boy, PC Engine, MSX, ZX Spectrum, Atari
-Filename: nz-lib-libgme_0.2.1_arm64.deb
-Size: 119052
-SHA256: eb69dbac3a1c22abb5b537c0509429e38ed1c5153ad79a30fd2f92f7a24b4798
-
-Package: nz-lib-libsidplayfp
-Version: 0.2.1
-Architecture: arm64
-Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
-Installed-Size: 435
-Section: libs
-Priority: optional
-Provides: libsidplayfp6 (= 2.16.1)
-NZ-Title: libsidplayfp
-NZ-Contents: libsidplayfp 2.16.1
-NZ-Digest: e96f4ae3c18b8fa6684b1e9f3ad668b84a229f2836bbb95e691edbbe73a31ad0
-Description: Commodore 64 SID music library (libsidplayfp)
-Filename: nz-lib-libsidplayfp_0.2.1_arm64.deb
-Size: 108404
-SHA256: fe4727dd89e8f81f1cbabed582c120d009ad7f4f57bbbd296b7ddad6302bc72d

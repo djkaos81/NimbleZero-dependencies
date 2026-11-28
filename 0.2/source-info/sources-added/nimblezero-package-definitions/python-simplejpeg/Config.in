@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PYTHON_SIMPLEJPEG
+	bool "python-simplejpeg"
+	depends on BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_NUMPY
+	select BR2_PACKAGE_JPEG
+	help
+	  Fast JPEG encoding and decoding with libjpeg-turbo (for picamera2).

@@ -1,0 +1,11 @@
+config BR2_PACKAGE_LIBSIDPLAYFP
+	bool "libsidplayfp"
+	depends on BR2_INSTALL_LIBSTDCPP
+	help
+	  Commodore 64 SID music library.  Used by the Media Player
+	  (package nz-lib-libsidplayfp).
+
+	  https://github.com/libsidplayfp/libsidplayfp
+
+comment "libsidplayfp needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP
