@@ -528,7 +528,7 @@ Size: 1368864
 SHA256: 83cfa1a898fb6a842bc9d190e8bd4ca573725f3320d89a500ec4a05c30f8fec3
 
 Package: nz-lib-libgme
-Version: 0.2.2
+Version: 0.2.3
 Architecture: arm64
 Maintainer: NimbleZero <https://github.com/djkaos81/NimbleZero>
 Installed-Size: 292
@@ -537,11 +537,11 @@ Priority: optional
 Provides: libgme0 (= 0.6.5)
 NZ-Title: libgme
 NZ-Contents: libgme 0.6.5
-NZ-Digest: f94f602145a4b2a68adbcde010ac1761b9cc20c64444b23654d20e8550dde465
-Description: Video game music library (libgme): NES, SNES, Genesis/VGM, Game Boy, PC Engine, MSX, ZX Spectrum, Atari
-Filename: nz-lib-libgme_0.2.2_arm64.deb
-Size: 116968
-SHA256: 04fa214ba37d8a81a3a1de13df5e238c1b8a55bc64163f189197354942f57932
+NZ-Digest: 381275ce32b4c6cc1f5ca3c4be13f4181a562f3cf5f765ddfed85a967826a975
+Description: Video game music library (libgme): NES, SNES, Genesis/VGM, Master System FM, Game Boy, PC Engine, MSX, ZX Spectrum, Atari
+Filename: nz-lib-libgme_0.2.3_arm64.deb
+Size: 117172
+SHA256: f7f97aad847aaedbae5edf144fa95475d490acedebc8ad28d7a930d5225d9f7d
 
 Package: nz-lib-libgpg-error
 Version: 0.2.1

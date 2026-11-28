@@ -1,0 +1,103 @@
+From: NimbleZero <https://github.com/djkaos81/NimbleZero>
+Subject: [PATCH] Ym2413_Emu: emulate the YM2413 with emu2413
+
+libgme 0.6.5 has only a stub YM2413 emulator (set_rate fails), so VGM files
+with YM2413 music (Sega Master System FM, MSX) are refused with "YM2413 FM
+sound isn't supported". Drive the emu2413 core instead, which libgme already
+builds for the NES VRC7 (gme/ext/emu2413.c, MIT licence).
+
+Signed-off-by: NimbleZero <https://github.com/djkaos81/NimbleZero>
+---
+--- a/gme/Ym2413_Emu.cpp
++++ b/gme/Ym2413_Emu.cpp
+@@ -1,21 +1,65 @@
+-
+-// Use in place of Ym2413_Emu.cpp and ym2413.c to disable support for this chip
++// YM2413 FM sound chip emulator interface, on emu2413 (ext/emu2413.c, the same core the
++// NSF player uses for the VRC7).  NimbleZero: libgme 0.6.5 ships only a stub here, so VGM
++// files with YM2413 music (Sega Master System FM, MSX) were refused.
+ 
+ // Game_Music_Emu https://bitbucket.org/mpyne/game-music-emu/
+ 
+ #include "Ym2413_Emu.h"
++#include "ext/emu2413.h"
+ 
+-Ym2413_Emu::Ym2413_Emu() { }
+-
+-Ym2413_Emu::~Ym2413_Emu() { }
+-
+-int Ym2413_Emu::set_rate( double, double ) { return 2; }
+-
+-void Ym2413_Emu::reset() { }
+-
+-void Ym2413_Emu::write( int, int ) { }
+-
+-void Ym2413_Emu::mute_voices( int ) { }
++#define opll ((OPLL*&) opll_)
+ 
+-void Ym2413_Emu::run( int, sample_t* ) { }
++Ym2413_Emu::Ym2413_Emu() { opll = 0; }
+ 
++Ym2413_Emu::~Ym2413_Emu()
++{
++	if ( opll ) OPLL_delete( opll );
++}
++
++int Ym2413_Emu::set_rate( double sample_rate, double clock_rate )
++{
++	if ( opll )
++	{
++		OPLL_delete( opll );
++		opll = 0;
++	}
++	opll = OPLL_new( (uint32_t) clock_rate, (uint32_t) sample_rate );
++	if ( !opll )
++		return 1;
++	OPLL_setChipType( opll, 0 ); // YM2413
++	OPLL_resetPatch( opll, 0 );
++	reset();
++	return 0;
++}
++
++void Ym2413_Emu::reset()
++{
++	OPLL_reset( opll );
++	OPLL_setMask( opll, 0 );
++}
++
++void Ym2413_Emu::write( int addr, int data )
++{
++	OPLL_writeReg( opll, (uint32_t) addr, (uint8_t) data );
++}
++
++void Ym2413_Emu::mute_voices( int mask )
++{
++	OPLL_setMask( opll, (uint32_t) mask ); // bits 0-8 melody channels, 9-13 rhythm, as channel_count
++}
++
++void Ym2413_Emu::run( int pair_count, sample_t* out )
++{
++	while ( pair_count-- )
++	{
++		int32_t s [2];
++		OPLL_calcStereo( opll, s );
++		for ( int i = 0; i < 2; i++ )
++		{
++			int v = out [i] + s [i]; // added: two chips share the buffer
++			if ( (short) v != v ) v = v < 0 ? -32768 : 32767;
++			out [i] = (sample_t) v;
++		}
++		out += 2;
++	}
++}
+--- a/gme/Ym2413_Emu.h
++++ b/gme/Ym2413_Emu.h
+@@ -5,7 +5,7 @@
+ #define YM2413_EMU_H
+ 
+ class Ym2413_Emu  {
+-	struct OPLL* opll;
++	void* opll_; // OPLL from ext/emu2413.h (NimbleZero)
+ public:
+ 	Ym2413_Emu();
+ 	~Ym2413_Emu();

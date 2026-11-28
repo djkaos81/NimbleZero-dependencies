@@ -4,7 +4,7 @@ config BR2_PACKAGE_LIBGME
 	select BR2_PACKAGE_ZLIB
 	help
 	  Video game music emulation library: NES, SNES, Genesis/VGM,
-	  Game Boy, PC Engine, MSX, ZX Spectrum, Atari.  Used by the
+	  Master System FM (YM2413, by emu2413: 0001-*.patch), Game Boy, PC Engine, MSX, ZX Spectrum, Atari.  Used by the
 	  Media Player (package nz-lib-libgme).
 
 	  https://github.com/libgme/game-music-emu

@@ -39,6 +39,12 @@ contents changed, and devices download only what changed.
     Bootlin bleeding-edge toolchain 2025.08-1 (gcc 15.1, glibc 2.41). libgme and
     libsidplayfp are Buildroot packages from this date on (same versions; their
     definitions are in `sources-added/nimblezero-package-definitions/`).
+  - 2026-11-28, later: `nz-lib-libgme` 0.2.3 plays VGM files with YM2413 music (Sega
+    Master System FM, MSX). The release's YM2413 emulator is a stub that refuses them;
+    `nimblezero-package-definitions/libgme/0001-Ym2413_Emu-emulate-the-YM2413-with-emu2413.patch`
+    drives the emu2413 core (MIT) that libgme already includes for the NES VRC7. This one
+    package was built outside the Buildroot tree with the same toolchain (Bootlin
+    2025.08-1) and Buildroot's flags; the next Buildroot build of the set must have the patch.
     **The sources of the 124 packages that are new or changed on this date are not in
     this directory** (631 MB; one archive is over GitHub's file limit for repositories):
     they are two release assets of the release `sources-0.2` of this repository, each
