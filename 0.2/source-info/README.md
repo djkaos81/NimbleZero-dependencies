@@ -41,9 +41,11 @@ contents changed, and devices download only what changed.
     definitions are in `sources-added/nimblezero-package-definitions/`).
     **The sources of the 124 packages that are new or changed on this date are not in
     this directory** (631 MB; one archive is over GitHub's file limit for repositories):
-    they are the release asset `nimblezero-0.2-sources-2026-11-28.tar` (SHA-256
-    `6d7ed289a5c8c68501c9c67a040e2549e17e06631d748bf6cc7355915a57aa62`) of the release
-    `sources-0.2` of this repository:
+    they are two release assets of the release `sources-0.2` of this repository, each
+    package complete in one of them: `nimblezero-0.2-sources-2026-11-28-part1.tar`
+    (SHA-256 `b458fe8a0f044ab8e4e2e39f1fd21cb199d49bdab39e3092389fb5786684e43c`) and
+    `nimblezero-0.2-sources-2026-11-28-part2.tar`
+    (SHA-256 `c00f2f21803b6fd9b289572a285d00ab35398db6a9030c35b6a4dd2cf07e57af`):
     https://github.com/djkaos81/nimblezero-dependencies/releases/tag/sources-0.2
     New: BlueZ 5.79, D-Bus, dbus-python, PyGObject and gobject-introspection, bleak,
     libcamera (Raspberry Pi's fork 0.8.0+rpt20261104, `buildroot-patches/0004`),
@@ -57,7 +59,7 @@ contents changed, and devices download only what changed.
     fonts-noto-color-emoji 2.051 archive, unmodified font), Python modules (PyYAML,
     psutil, wcwidth, h2, h11, aiofiles, cachetools, jsonschema, markdown-it, pypinyin
     and what they need) and the libraries these need; the full list with versions is
-    the archive's `sources/` directory, licences are in `licence-manifest.csv`.
+    the archives' `sources/` directories, licences are in `licence-manifest.csv`.
     `licence-manifest.csv`, `licences.tar.gz`, `buildroot.config` and the other build
     files here describe the build of 2026-11-28.
 - How NimbleZero builds the packages that are not in Buildroot (fonts, pygame, PipeWire
